@@ -1,0 +1,23 @@
+.bg-item{
+    background-color: #cfe2ff !important;
+    
+}
+.sub-title{
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: blue;
+}
+.add-item-container{
+    padding: 2rem;
+}
+.field-title{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: blue;
+    margin-bottom: 1rem;
+}
+.dropdown-style{
+    background: white;
+    width: 100%;
+    text-align: start;
+}
