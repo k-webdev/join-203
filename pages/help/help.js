@@ -66,7 +66,3 @@ Error iste nisi quos officia vero voluptas voluptatem commodi facere! Officiis v
 
     `;
 }
-
-function loadStruggleIcon() {
-    document.getElementById('arrow').classList.add('arrow');
-}

@@ -19,10 +19,6 @@ li{
     margin-left: 50px;
 }
 
-.arrow-stop {
-    width: auto;
-}
-
 .arrow{
     width: auto;
     animation: movingArrow 1.5s infinite;
