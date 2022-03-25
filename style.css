@@ -1,0 +1,17 @@
+/* =======Test elements======= */
+
+.test-class{
+    width: 500px;
+    height: 500px;
+    background-color: red;
+}
+
+/* =========================== */
+.d-none{
+    display: none;
+}
+
+.show-content{
+    display: flex;
+    align-items: center;
+}
