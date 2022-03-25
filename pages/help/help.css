@@ -19,9 +19,13 @@ li{
     margin-left: 50px;
 }
 
+.arrow-stop {
+    width: auto;
+}
+
 .arrow{
     width: auto;
-    animation: movingArrow 2s;
+    animation: movingArrow 1.5s infinite;
 }
 
 @keyframes movingArrow {
@@ -29,7 +33,7 @@ li{
     transform: translateY(0);
     }   
     50%{
-        transform: translateY(-18px);
+        transform: translateY(-16px);
     }
     100%{
         transform: translateY(0);

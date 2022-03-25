@@ -1,4 +1,4 @@
-function openBoardHelp(){
+function openBoardHelp() {
     document.getElementById('get-help-content').innerHTML = '';
 
     document.getElementById('get-help-content').innerHTML = `
@@ -21,7 +21,7 @@ Error iste nisi quos officia vero voluptas voluptatem commodi facere! Officiis v
     `;
 }
 
-function openBackLogHelp(){
+function openBackLogHelp() {
     document.getElementById('get-help-content').innerHTML = '';
 
     document.getElementById('get-help-content').innerHTML = `
@@ -44,7 +44,7 @@ Error iste nisi quos officia vero voluptas voluptatem commodi facere! Officiis v
     `;
 }
 
-function openAddTask(){
+function openAddTask() {
     document.getElementById('get-help-content').innerHTML = '';
 
     document.getElementById('get-help-content').innerHTML = `
@@ -67,13 +67,6 @@ Error iste nisi quos officia vero voluptas voluptatem commodi facere! Officiis v
     `;
 }
 
-function struggleIcon(){
-    setInterval(()=>{
-        document.getElementById('arrow').classList.add('arrow')
-        setTimeout(()=>{
-            document.getElementById('arrow').classList.remove('arrow');
-        },2000);
-    },4000);
-    ;
-    
+function loadStruggleIcon() {
+    document.getElementById('arrow').classList.add('arrow');
 }
