@@ -1,3 +1,12 @@
 .board-site {
     height: 100vh;
+    width: 100%;
+}
+
+.width-columns{
+    width: 25%;
+}
+
+.width-columns h3{
+    text-align: center;
 }

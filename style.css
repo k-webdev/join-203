@@ -1,3 +1,33 @@
+body{
+    min-height: 100vh !important;
+}
+
+/* === SCROLLBAR === */
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #0d6efd #0dcaf0;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #0dcaf0;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #0d6efd;
+    border-radius: 10px;
+    border: 3px solid #0dcaf0;
+  }
+  
+/* ================= */
+
 /* =======Test elements======= */
 
 .test-class{
@@ -14,4 +44,8 @@
 .show-content{
     display: flex;
     align-items: center;
+}
+
+.board{
+    width: 100%;
 }
