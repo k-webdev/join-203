@@ -21,3 +21,43 @@
     width: 100%;
     text-align: start;
 }
+.dropdown-style::after{
+    margin-left: 92%;
+}
+#cancel-btn{
+    background: transparent;
+    border: transparent;
+    color: blue;
+    font-weight: 600;
+}
+#create-btn{
+    border-radius: 10px;
+    padding: 0.6rem 1.1rem 0.6rem 1.1rem;
+}
+.img-item{
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 100%;
+}
+.img-container{
+    display: flex;
+    align-items: center;
+}
+.add-assignment{
+    font-size: 3.7rem;
+    line-height: 2.3rem;
+    font-weight: 100;
+    height: 3rem;
+    color: blue;
+    padding: 0px;
+    background: grey;
+    border-radius: 100%;
+    cursor: pointer;
+}
+textarea { 
+    resize: none; 
+}
+.selection-colors{
+    background: white;
+    color: black;
+}
