@@ -13,9 +13,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOIN</title>
-    <link rel="stylesheet" href="./template/navigation/navigation.css">
     <script src="script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- ------------------------------- DK start ------------------------------- -->
+    <link rel="stylesheet" href="./template/navigation/navigation.css">
+    <link rel="stylesheet" href="./pages/help/help.css">
     <script src="./template/navigation/navigation.js"></script>
+    <script src="./pages/help/help.js"></script>
+    <!-- ------------------------------- DK end ------------------------------- -->
+    
     <script src="./template/templates.js"></script>
 
     <link rel="stylesheet" href="./template/board/board.css">
@@ -25,10 +32,29 @@
 
 </head>
 
-<body onload="includeHTML()">
+<body class="bg-primary" onload="includeHTML()">
 
-    <div class="size" w3-include-html="./template/navigation/navigation.html"></div>
-    <div class="board" w3-include-html="./template/board/board.html"></div>
+    <!-- show-content div shows every page. The id was used by script.js to change the window values. -->
+    <div  class="show-content bg-primary">
+        <!-- class="size" has no propertys(empty). Visibility: every time if Join is not in responsiv mode.  -->
+        <div class="size" w3-include-html="./template/navigation/navigation.html"></div>
+        <!-- class="board" has no propertys(empty). Visibility: if you click on navbar "Board" script.js set board variable "true" all others flase. -->
+        <div id="board" class="board" w3-include-html="./template/board/board.html"></div>
+        <div id="help" w3-include-html="./pages/help/help.html"></div>
+        
+        
+        
+        
+        <!-- please add the correct classes with the d-none class and add the path -->
+        <div id="back-log" class="d-none" w3-include-html=""></div>
+        <div id="add-task" class="d-none" w3-include-html=""></div>
+        <!-- ---------------------------------------------------------------------- -->
+
+
+
+    </div>
+
+
 
 </body>
 

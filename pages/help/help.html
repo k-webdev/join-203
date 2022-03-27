@@ -1,13 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOIN</title>
-    <script src="script.js"></script> 
-</head>
-<body>
-    
-</body>
-</html>
+<div  class="help-bg-sort">
+    <div class="offcanvas bg-info offcanvas-start" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Help</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                <ul>
+                    <h4>Category</h4>
+                    <li>
+                        <a class="btn btn-info" onclick="openBoardHelp()" href="#">Help Board</a> 
+                    </li>
+                    <li>
+                        <a class="btn btn-info" onclick="openBackLogHelp()" href="#">Help Back Log</a> 
+                    </li>
+                    <li>
+                        <a class="btn btn-info" onclick="openAddTask()" href="#">Help Add Task</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="get-help-content" class="content-sort bg-info">
+                <div class="moving-image"><img id="arrow" class="arrow" src="../../img/arrow.png"></div>
+                
+                Please choose a category
+            </div>
+        </div>
+    </div>
+</div>

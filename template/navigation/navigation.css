@@ -3,9 +3,6 @@
 }
 
 .navbar-sort {
-    position: absolute;
-    top: 50px;
-    left: 0;
     height: calc(100vh - 100px);
     width: 200px;
     border-top-right-radius: 4px;
@@ -35,10 +32,10 @@
 
 .img-bottom-sort {
     width: 100%;
-    position: absolute;
-    bottom: 50px;
+    height: 30%;
     display: flex;
     justify-content: center;
+    align-items: flex-end;
 }
 
 .img-bottom-sort img {
