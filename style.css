@@ -47,9 +47,20 @@ body{
 }
 
 .board{
+  animation: zoomIn 0.35s ease-in;
     width: 100%;
 }
 
 .add-task{
+  animation: zoomIn 0.35s ease-in;
   width: 100%;
+}
+
+@keyframes zoomIn {
+  from{
+    transform: scale(0);
+  }
+  to{
+    transform: scale(1);
+  }
 }
