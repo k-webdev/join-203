@@ -15,23 +15,36 @@
     <title>JOIN</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="./style.css">
+    <script src="./template/templates.js"></script><!-- -------------------------------------------------------------------------------------- -->
 
     <!-- ------------------------------- DK start ------------------------------- -->
     <link rel="stylesheet" href="./template/navigation/navigation.css">
-    <link rel="stylesheet" href="./pages/help/help.css">
-
-
-    <!-- base data set and functions-->
-    <script src="./template/task.js"></script>
-
+    <link rel="stylesheet" href="./template/help/help.css">
     <!-- navigation sources -->
     <script src="./template/navigation/navigation.js"></script>
-    <script src="./pages/help/help.js"></script>
+    <script src="./template/help/help.js"></script>
     <!-- ------------------------------- DK end ------------------------------- -->
+
+
+
+
+
+    <!-- ------------- add task Marcus ---------------------------------------- -->
+
+    <link rel="stylesheet" href="./template/addItem/addItem.css">
+    <script src="./template/addItem/addItem.js"></script>
+    <script src="./template/task.js"></script>
+
+    <!-- --------------- add task Marcus end ---------------------------------- -->
+
     
-    <script src="./template/templates.js"></script>
+
+
+
 
     <!-- board sources -->
+    <!-- base data set and functions-->
+    <script src="./template/task.js"></script><!-- -------------------------------------------------------------------------------------- -->
     <link rel="stylesheet" href="./template/board/board.css">
     <script src="./template/board/board.js"></script>
     <script src="./template/board/dummy-tasks.js"></script>
@@ -40,19 +53,30 @@
 <body class="bg-primary" onload="includeHTML()">
 
     <!-- show-content div shows every page. The id was used by script.js to change the window values. -->
-    <div  class="show-content bg-primary">
+    <div class="show-content bg-primary">
         <!-- class="size" has no propertys(empty). Visibility: every time if Join is not in responsiv mode.  -->
         <div class="size" w3-include-html="./template/navigation/navigation.html"></div>
-        <!-- class="board" has no propertys(empty). Visibility: if you click on navbar "Board" script.js set board variable "true" all others flase. -->
-        <div id="board" class="board" w3-include-html="./template/board/board.html"></div>
-        <div id="help" w3-include-html="./pages/help/help.html"></div>
+        <!-- <div class="size" w3-include-html="./template/navigation/navigation.html"></div> -->
+        <div id="board" class="board d-none" w3-include-html="./template/board/board.html"></div>
+
+
+
+
+
+        <div id="addTask" class="add-task d-none" w3-include-html="./template/addItem/addItem.html"></div>
         
         
         
         
+        
+        <div w3-include-html="./template/help/help.html"></div>
+
+
+
+
         <!-- please add the correct classes with the d-none class and add the path -->
-        <div id="back-log" class="d-none" w3-include-html=""></div>
-        <div id="add-task" class="d-none" w3-include-html=""></div>
+        <!-- 
+        <div id="back-log" class="d-none" w3-include-html=""></div> -->
         <!-- ---------------------------------------------------------------------- -->
 
 
@@ -60,8 +84,7 @@
     </div>
 
 
-    <!-- <div class="size" w3-include-html="./template/navigation/navigation.html"></div> -->
-    <div class="board" w3-include-html="./template/board/board.html"></div>
+
 
     <!-- <script>
         dummyInit();
