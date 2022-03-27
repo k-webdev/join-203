@@ -26,4 +26,7 @@ function includeHTML() {
         return;
       }
     }
+
+    dummyInit();
+    updateBoardHTML();
   }

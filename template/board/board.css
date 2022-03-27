@@ -7,11 +7,11 @@
     border-width: 1px;
     border-radius: 5px;
     border-color: black;
-    margin: 3px;
+    /* margin: 3px;
     padding: 3px;
-    padding-left: 10px;
-    background: #999;    
-    color:white;    
+    padding-left: 10px; */
+    background: #666;    
+    color:rgb(255,255,255);    
     
 }
 

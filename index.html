@@ -15,9 +15,16 @@
     <title>JOIN</title>
     <link rel="stylesheet" href="./template/navigation/navigation.css">
     <script src="script.js"></script>
+
+
+    <!-- base data set and functions-->
+    <script src="./template/task.js"></script>
+
+    <!-- navigation sources -->
     <script src="./template/navigation/navigation.js"></script>
     <script src="./template/templates.js"></script>
 
+    <!-- board sources -->
     <link rel="stylesheet" href="./template/board/board.css">
     <script src="./template/board/board.js"></script>
     <script src="./template/board/dummy-tasks.js"></script>
@@ -25,18 +32,13 @@
 
 <body onload="includeHTML()">
 
-    <!-- <body onload="includeHTML(), updateBoardHTML()"> -->
-
     <!-- <div class="size" w3-include-html="./template/navigation/navigation.html"></div> -->
     <div class="board" w3-include-html="./template/board/board.html"></div>
 
-    <script>
-        // updateBoardHTML();        
-        // setTimeout(() => { updateBoardHTML(); }, 1000);        
-        document.addEventListener('DOMContentLoaded', function () {
-            updateBoardHTML();
-        }, false);
-    </script>
+    <!-- <script>
+        dummyInit();
+        setTimeout(() => { updateBoardHTML(); }, 1000);   
+    </script> -->
 
 </body>
 
