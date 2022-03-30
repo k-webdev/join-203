@@ -1,99 +1,35 @@
-// let tasks = [
-//     {
-//         'id': 0,
-//         'content': 'test1',
-//         'section': 'todo'
-//     }, {
-//         'id': 1,
-//         'content': 'test2',
-//         'section': 'todo'
-//     }, {
-//         'id': 2,
-//         'content': 'test3',
-//         'section': 'inprogress'
-//     }, {
-//         'id': 3,
-//         'content': 'test4',
-//         'section': 'testing'
-//     }, {
-//         'id': 4,
-//         'content': 'test5',
-//         'section': 'done'
-//     }];
-
 let currentDraggedElement;
+
+function generateSection(keySection, filterKey){
+     
+     let inprogress = tasks.filter(t => t['section'] == filterKey);   
+
+     document.getElementById(keySection).innerHTML = '';  
+        
+     for (let index = 0; index < inprogress.length; index++) {
+         const element = inprogress[index];
+         document.getElementById(keySection).innerHTML += generateTask(element);
+     }
+
+}
+
 
 function updateBoardHTML() {
 
-    // console.log("in updateBoardHTML()");    
-
-    // filter tasks 4 "todo-section"    
-    let todo = tasks.filter(task => task['section'] == 'todo');
-    // console.log(tasks);
-    // console.log(todo);
-    // console.log(date());
-
-    //test
-    // let todo =[];
-    // for (let index = 0; index < tasks.length; index++) {
-    //     console.log(tasks[index]['title']);
-
-    // }
-
-
-    // delete content of "todo-section"  
-    document.getElementById('todo-section').innerHTML = '';
-
-    // generate tasks 4 "todo-section"
-    for (let index = 0; index < todo.length; index++) {
-        const element = todo[index];
-        document.getElementById('todo-section').innerHTML += generateTask(element);
-    }
-
-
-    // filter tasks 4 "inprogress-section"
-    let inprogress = tasks.filter(t => t['section'] == 'inprogress');
-
-    // delete content of "inprogress-section"  
-    document.getElementById('inprogress-section').innerHTML = '';
-
-    // generate tasks 4 "inprogress-section"
-    for (let index = 0; index < inprogress.length; index++) {
-        const element = inprogress[index];
-        document.getElementById('inprogress-section').innerHTML += generateTask(element);
-    }
-
-
-    // filter tasks 4 "testing-section"
-    let testing = tasks.filter(t => t['section'] == 'testing');
-
-    // delete content of "testing-section"  
-    document.getElementById('testing-section').innerHTML = '';
-
-    // generate tasks 4 "testing-section"
-    for (let index = 0; index < testing.length; index++) {
-        const element = testing[index];
-        document.getElementById('testing-section').innerHTML += generateTask(element);
-    }
-
-
-    // filter tasks 4 "done-section"
-    let done = tasks.filter(t => t['section'] == 'done');
-
-    // delete content of "done-section"  
-    document.getElementById('done-section').innerHTML = '';
-
-    // generate tasks 4 "done-section"
-    for (let index = 0; index < done.length; index++) {
-        const element = done[index];
-        document.getElementById('done-section').innerHTML += generateTask(element);
-    }
+    generateSection('todo-section','todo');
+    generateSection('inprogress-section','inprogress');
+    generateSection('testing-section','testing');
+    generateSection('done-section','done'); 
 
 }
+
 
 function startDragging(id) {
+
     currentDraggedElement = id;
+
 }
+
 
 function generateTask(element) {   
 
@@ -113,7 +49,7 @@ function generateTask(element) {
                     <div class="border border-top-0 px-1"> 
                         ${element['title']}
                     </div>
-                    <div class="border rounded-pill px-2"> 
+                    <div class="border justify-content-center align-items-center rounded-pill px-2"> 
                         ${element['date']}
                     </div>
                 </div>
@@ -131,11 +67,14 @@ function generateTask(element) {
             </div>
         </div>
     `
+
 }
+
 
 function allowDrop(ev) {
     ev.preventDefault();
 }
+
 
 function moveTo(section) {
     // console.log(section);

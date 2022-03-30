@@ -17,6 +17,15 @@
     <script src="script.js"></script><!-- Main script.js -->
     <link rel="stylesheet" href="./style.css"><!-- Main CSS -->
     <script src="./template/templates.js"></script><!-- Template script from W3Schools -->
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon"> <!-- Vali made -->
+
+    <!-- --------------------------------Vali Backenend integration -------------------- -->
+    <script src="./smallest_backend_ever-master/mini_backend.js"></script>
+    <!-- <script>
+        setURL('http://developerakademie.com/smallest_backend_ever');
+    </script> -->
+    <!-- --------------------------------Vali Backenend integration end ---------------- -->
+
 
     <!-- ------------------------------- DK navbar start ------------------------------- -->
     <link rel="stylesheet" href="./template/navigation/navigation.css">
@@ -29,7 +38,7 @@
     <!-- ------------- add task Marcus ---------------------------------------- -->
     <link rel="stylesheet" href="./template/addItem/addItem.css">
     <script src="./template/addItem/addItem.js"></script>
-    <script src="./template/task.js"></script>
+    <!-- <script src="./template/task.js"></script> -->
     <!-- --------------- add task Marcus end ---------------------------------- -->
 
     <!-- ---------------------------------- Board Valentin ---------------------------------- -->
@@ -41,9 +50,13 @@
     <script src="./template/board/dummy-tasks.js"></script>
     <!-- ---------------------------------- Board Valentin end ---------------------------------- -->
 
+    <!-- ------------------------------------init by Vali --------------------------------------- -->
+    <script src="./template/init.js"></script>
+    <!-- ------------------------------------init by Vali end--------------------------------------- -->
+
 </head>
 
-<body class="bg-primary" onload="includeHTML()">
+<body class="bg-primary" onload="init()">
 
     <!-- show-content div shows every page. The id was used by script.js to change the window values. -->
     <div class="show-content bg-primary">
@@ -70,7 +83,12 @@
     <!-- <script>
         dummyInit();
         setTimeout(() => { updateBoardHTML(); }, 1000);   
+        
     </script> -->
+
+    <script>
+        // setURL('http://developerakademie.com/smallest_backend_ever');
+    </script>
 
 </body>
 
