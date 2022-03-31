@@ -26,10 +26,16 @@
     <script src="./template/help/help.js"></script>
     <!-- ------------------------------- DK navbar end ------------------------------- -->
 
+    <!-- ------------------------------- DK backlog start ------------------------------- -->
+    <script src="./template/backlog/backlog.js"></script>
+    <link rel="stylesheet" href="./template/backlog/backlog.css">
+    
+    <!-- ------------------------------- DK backlog end ------------------------------- -->
+
     <!-- ------------- add task Markus ---------------------------------------- -->
     <link rel="stylesheet" href="./template/addItem/addItem.css">
     <script src="./template/addItem/addItem.js"></script>
-    <script src="./template/task.js"></script>
+    <!-- <script src="./template/task.js"></script> -->
     <!-- --------------- add task Markus end ---------------------------------- -->
 
     <!-- ---------------------------------- Board Valentin ---------------------------------- -->
@@ -48,10 +54,15 @@
     <!-- show-content div shows every page. The id was used by script.js to change the window values. -->
     <div class="show-content bg-primary">
 
-        <!-- navbar DK -->
+        <!-- DK navbar start -->
         <!-- class="size" has no propertys(empty). Visibility: every time if Join is not in responsiv mode.  -->
         <div class="size" w3-include-html="./template/navigation/navigation.html"></div>
-        <!-- navbar DK end -->
+        <div class="cover-navbar"></div>
+        <!-- DK navbar end -->
+
+        <!-- DK backlog start -->
+        <div id="back-log" class="backlog d-none" w3-include-html="./template/backlog/backlog.html"></div>
+        <!-- DK backlog end -->
 
         <!-- board Valentin -->
         <div id="board" class="board d-none" w3-include-html="./template/board/board.html"></div>

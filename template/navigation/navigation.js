@@ -30,18 +30,19 @@ template "DIV" at index.html needs a id:
 
 function openBoard() {
     document.getElementById('board').classList.remove('d-none');
-    /* document.getElementById('back-log').classList.add('d-none'); */
+    document.getElementById('back-log').classList.add('d-none');
     document.getElementById('addTask').classList.add('d-none');
 }
 
-/* function openBackLog() {
+function openBackLog() {
     document.getElementById('back-log').classList.remove('d-none');
     document.getElementById('board').classList.add('d-none');
-    document.getElementById('add-task').classList.add('d-none');
-} */
+    document.getElementById('addTask').classList.add('d-none');
+}
 
 function openAddTasks(){
     document.getElementById('addTask').classList.remove('d-none');
+    document.getElementById('back-log').classList.add('d-none');
     document.getElementById('board').classList.add('d-none');
 }
 
