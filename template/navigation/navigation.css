@@ -3,6 +3,7 @@
 }
 
 .navbar-sort {
+    position: fixed;
     height: calc(100vh - 100px);
     width: 200px;
     border-top-right-radius: 4px;
@@ -11,7 +12,6 @@
 
 .navbar-sort a {
     color: white;
-    padding-left: 50px;
     font-size: 21px;
     border-left: 4px solid transparent;
     border-radius: 1px;
