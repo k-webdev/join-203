@@ -1,7 +1,8 @@
 function init() {
     includeHTML(); // W3C Include 
-    dummyInit();
+    loadDB();
+    // dummyInit();
     // updateBoardHTML();
     // setTimeout(() => { updateBoardHTML(); }, 1000);
-    setURL('http://developerakademie.com/smallest_backend_ever');
+    // setURL('http://gruppe-203.developerakademie.net/backend');
 }
