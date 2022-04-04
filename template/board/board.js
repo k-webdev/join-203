@@ -10,7 +10,7 @@ function generateSection(keySection, filterKey) {
 
     for (let index = 0; index < filteredList.length; index++) {
 
-        // put an element from filteredList and assign it to variavle 'element'
+        // put an element from filteredList and assign it to variable 'element'
         const element = filteredList[index];
         // add a generated html-content for section/collumn with content of variable 'element' 
         document.getElementById(keySection).innerHTML += generateTask(element);
@@ -28,7 +28,7 @@ function updateBoardHTML() {
     generateSection('done-section', 'done');
 
     //console-log for testing
-    console.log('updateBoardHTML(); ...done');
+    // console.log('updateBoardHTML(); ...done');
 }
 
 // this function generates task-content 
