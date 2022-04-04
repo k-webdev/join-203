@@ -56,10 +56,10 @@ function generateTask(element) {
                 </div>
                 <div class="d-flex m-1 justify-content-between">
                     <div> 
-                        - ${element['category']} -
+                        - ${element['department']} -
                     </div>
                     <div> 
-                        by ${element['assignedto']}
+                        by ${element['assigned-to']}
                     </div>
                 </div>
                 <div class="border m-1 px-1 rounded">
