@@ -25,9 +25,5 @@ function includeHTML() {
       /* Exit the function: */
       return;
     }
-  }
-  
-  // setURL('http://developerakademie.com/smallest_backend_ever');
-  // dummyInit();
-  updateBoardHTML();
+  } 
 }

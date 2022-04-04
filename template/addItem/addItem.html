@@ -1,5 +1,5 @@
 <!-- bootstrap grid card -->
-<div class="add-item-container">
+<div class="add-item-container" onload="onInit()">
     <div>
         <h4>Add Task</h4>
         <p class="sub-title">Learning Management System</p>
@@ -14,17 +14,18 @@
             <div class="col">
                 <span class="field-title">Due Date</span>
 
-                <div><input type="date" id="date" class="my-2 form-control" name="trip-start" value="2022-03-26"
-                        min="2022-01-01" max="9999-12-31"></div>
+                <div><input type="date" id="date" class="my-2 form-control" name="trip-start" value="" min="2022-01-01"
+                        max="9999-12-31"></div>
 
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <span class="field-title">Category</span>
-                <div><select id="category" class="btn btn-outline-secondary dropdown-toggle my-2 dropdown-style"
-                        type="button" data-bs-toggle="dropdown" aria-expanded="false" placeholder="Select">
-                        <option class="selection-colors" value="Managment">Management</option>
+                <span class="field-title">Department</span>
+                <div><select id="department"
+                        class="btn btn-outline-secondary dropdown-toggle my-2 dropdown-style selection-colors"
+                        type="button" aria-expanded="false" placeholder="Select">
+                        <option class="selection-colors" value="Management">Management</option>
                         <option class="selection-colors" value="Controlling">Controlling</option>
                         <option class="selection-colors" value="Finance">Finance</option>
                         <option class="selection-colors" value="IT">IT</option>
@@ -34,8 +35,9 @@
 
             <div class="col">
                 <span class="field-title">Urgency</span>
-                <div><select id="urgency" class="btn btn-outline-secondary dropdown-toggle my-2 dropdown-style"
-                        type="button" data-bs-toggle="dropdown" aria-expanded="false" placeholder="Select">
+                <div><select id="urgency"
+                        class="btn btn-outline-secondary dropdown-toggle my-2 dropdown-style selection-colors"
+                        type="button" aria-expanded="false" placeholder="Select">
                         <option class="selection-colors" value="High">High</option>
                         <option class="selection-colors" value="Medium">Medium</option>
                         <option class="selection-colors" value="Low">Low</option>
@@ -47,7 +49,7 @@
                 <span class="field-title">Description</span>
                 <div class="form-group">
                     <textarea id="description" class="form-control" id="exampleFormControlTextarea1" rows="6"
-                        placeholder="Describe your task as detailed as possible!"></textarea>
+                    placeholder="Describe your task as detailed as possible!"></textarea>
                 </div>
             </div>
             <div class="col">
@@ -55,7 +57,10 @@
                     <span class="field-title">Assigned to</span>
                     <div class="img-container  mt-4 mb-2">
                         <div id="assigned-to-container">
-                            <img class="img-item" src="./../../img/homer.jpg">
+                            <div style="display: none;"><select id="assign-options"
+                                    class="btn btn-outline-secondary dropdown-toggle my-2 dropdown-style selection-colors"
+                                    type="button" aria-expanded="false" placeholder="Select">
+                                </select></div>
                         </div>
                         <div class="add-assignment mx-3" onclick="assignEmployee()">+</div>
                     </div>

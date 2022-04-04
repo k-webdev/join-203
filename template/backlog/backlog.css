@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+
+}
+
+.link-design{
+    color: white;
+}
+
+
+/* ================================ */
+
+
+table{
+    margin: 16px;
+}
+
+table thead th:last-child{
+    text-align: center !important;
+}
+
+table thead{
+    border-style: none !important;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    background-color: #0dcaf0;
+}
+
+table thead th:first-child{
+    border-radius: 4px 0 0 0;
+}
+
+table thead th:last-child{
+    border-radius: 0 4px 0 0;
+    height: 50px;
+}
+
+table tbody tr:nth-child(even){
+    background-color: #0dcaf0;
+}
+table tbody td{
+    padding: 16px;
+}
+
+table tbody tr:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+table tbody td:first-child{
+    border-radius: 4px 0 0 4px;
+}
+
+table tbody td:last-child{
+    border-radius: 0 4px 4px 0;
+}
+
+
+
+
+
+
+
+
+
+.backlog-sort-bg{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+}
+
+.img-assigned{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    border: 4px red solid;/* to change for user color */
+    object-fit: cover;
+}
