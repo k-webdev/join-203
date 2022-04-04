@@ -17,3 +17,4 @@ function moveTo(section) {
     tasks[currentDraggedElement]['section'] = section; // change 
     updateBoardHTML(); // every change on 'tasks'-dataset needs a rebuild of board-site 
 }
+

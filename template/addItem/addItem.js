@@ -22,8 +22,9 @@ function createTask() {
     getInputValues();
     getTask();
     pushTaskIntoTasks();
+    saveDB();
     resetInputFields();
-    
+
 }
 
 function getInputValues() {
@@ -64,7 +65,7 @@ function assignButton() {
 }
 
 function pushTaskIntoTasks() {
-   return tasks.push(getTask());
+    return tasks.push(getTask());
 }
 
 function spliceAssignedEmployee(i, assignableEmployees) {
