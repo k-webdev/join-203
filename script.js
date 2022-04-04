@@ -12,9 +12,7 @@ function loadArrayFromLocalStorage() {
 
     console.log(taskFromLocalStorage);
 
-
     tasksForBacklog.push(JSON.parse(JSON.stringify(taskFromLocalStorage)));
-
 
     console.log(tasksForBacklog);
     console.log(addTasksToJSonAsString);
@@ -37,7 +35,7 @@ function initBacklog() {/* inition by onclick="openBacklog(addBacklog())" at nav
  * @param{ string } - JSON array 
  */
 
-function addBacklogs() {//img tag variable for changing images. ${tasksForBacklog[x][i]['image']}
+function addBacklogs() { //img tag variable for changing images. ${tasksForBacklog[x][i]['image']}
     document.getElementById('add-table-content').innerHTML = '';
 
     
