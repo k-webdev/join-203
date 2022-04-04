@@ -46,7 +46,7 @@ function getTask() {
         'department': department,
         'urgency': urgency,
         'description': description,
-        'assignedTo': assignedEmployees[0], //@param array
+        'assigned-to': assignedEmployees[0], //@param array
         'section': 'todo',
         'visibleboard': false
     };
