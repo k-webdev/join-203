@@ -1,8 +1,8 @@
 <!-- bootstrap grid card -->
-<div id="assign-btn-container" style="">
+<div id="assign-btn-container" style="display: none;">
 </div>
 
-<div class="add-item-container" onload="onInit()">
+<div id = "add-task-container"class="add-item-container" onload="onInit()">
     <div>
         <h4>Add Task</h4>
         <p class="sub-title">Learning Management System</p>
@@ -17,7 +17,7 @@
             <div class="col">
                 <span class="field-title">Due Date</span>
 
-                <div><input type="date" id="date" class="my-2 form-control" name="trip-start" value="" min="2022-01-01"
+                <div><input type="date" id="date" class="my-2 form-control" name="trip-start"  min="2022-01-01"
                         max="9999-12-31"></div>
 
             </div>
@@ -61,14 +61,13 @@
                     <div class="img-container  my-4">
                         <div id="assigned-to-container">
 
-                            <!-- <img class="add-assignment mx-3" src="./../../img/homer.jpg" onclick="assignEmployee()"> -->
                         </div>
 
-                        <img id="assign-btn" type="button" class="add-assignment mx-3" src="./../../img/plus-6-64.ico" onclick="assignEmployee()">
+                        <img id="assign-btn" type="button" class="add-assignment mx-3" src="./../../img/plus-6-64.ico" onclick="openAssignEmployeeDropdown()">
                     </div>
                 </div>
                 <div class="cc-buttons my-2">
-                    <button onclick="cancelTask()" id="cancel-btn" class="btn-style">Cancel</button>
+                    <button onclick="closeAddTasks()" id="cancel-btn" class="btn-style">Cancel</button>
                     <button onclick="createTask()" id="create-btn" class="btn-primary">Create Task</button>
                 </div>
             </div>

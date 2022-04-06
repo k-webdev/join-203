@@ -56,8 +56,9 @@
     cursor: pointer;
 }
 #assign-options{
+    z-index:999;
     position: absolute;
-    width: 10%;
+    width: 11%;
 }
 textarea { 
     resize: none; 

@@ -5,8 +5,9 @@ let dueDate;
 let department;
 let urgency;
 let description;
-let assignedEmployees = ['Homer'];
+let assignedEmployees = [];
 let allEmployees = ['Homer', 'Marge', 'Maggie', 'Bart', 'Lisa']
+let assignableEmployees = allEmployees;
 let allEmployeePicture = [{
     'homer': "./../../img/homer.jpg",
     'marge': "",
@@ -14,10 +15,14 @@ let allEmployeePicture = [{
     'bart': "",
     'lisa': ""
 }];
+// let mousePosition_x;
+// let mousePosition_y;
+
 
 function addTaskOnInit() {
     setTodayInDatepicker();
     assignButtonInit();
+    onmousedown;
 }
 function createTask() {
     getInputValues();
@@ -54,51 +59,58 @@ function getTask() {
 }
 
 function assignButtonInit() {
-    // let assignedEmployees = allEmployees;
+
 
     document.getElementById('assign-btn-container').innerHTML =
-        `<select id="assign-options"
+        `<select id="assign-options" onchange="selectAssignableEmployee()" 
         class="btn btn-outline-secondary dropdown-toggle my-2 dropdown-style selection-colors" type="button"
         aria-expanded="false" placeholder="Select">
+        <option selected disabled>Choose employee</option>
     </select>`;
 
-    for (let i = 0; i < allEmployees.length; i++) {
+    for (let i = 0; i < assignableEmployees.length; i++) {
         document.getElementById('assign-options').innerHTML +=
             `
-        <option onclick="spliceAssignedEmployee(${i, allEmployees[i]})" class="selection-colors" value="${allEmployees[i]}">${allEmployees[i]}</option>
+        <option onclick="selectAssignableEmployee(${assignableEmployees[i]})" class="selection-colors" value="${assignableEmployees[i]}">${assignableEmployees[i]}</option>
         `
     }
+    document.getElementById('assign-options').innerHTML += `<option id="dd-close-btn" value="close">Close dropdown</option>`;
+    
 }
-function repositionDropdown(){
+function repositionAssignToDropdown() {
+    document.getElementById('assign-options').style.left = `${mousePosition_x / window.innerWidth * 100}%`
+    document.getElementById('assign-options').style.top = `${mousePosition_y / window.innerHeight * 100}%`
+}
 
+onmousedown = function (e) {
+    mousePosition_x = e.x;
+    mousePosition_y = e.y;
+
+    console.log(mousePosition_x, mousePosition_y)
 }
-// need to fix function
-function assignEmployee() {
-    // document.getElementById('button').addEventListener("click", onmousedown);
-    onmousedown = function (e) {
-        let x = e.x;
-        let y = e.y;
-        if (document.getElementById('assign-btn').clicked == true) {
-            document.getElementById('assign-options').style.left = `${e.x / window.innerWidth * 100}%`
-            document.getElementById('assign-options').style.top = `${e.y / window.innerHeight * 100}%`
-        }
-        console.log(x, y)
-    }
+
+function openAssignEmployeeDropdown() {
+    if (assignableEmployees == 0) { return }
+    document.getElementById('assign-btn-container').style.display = '';
+    repositionAssignToDropdown();
+}
+
+function selectAssignableEmployee() {
+    var dropdownMenu = document.getElementById('assign-options');
+    var selectedEmployee = dropdownMenu.options[dropdownMenu.selectedIndex].value;
+    if (selectedEmployee == "close") { return document.getElementById('assign-btn-container').style.display = 'none'; }
+    assignedEmployees.push(selectedEmployee);
+    spliceAssignedEmployee(assignableEmployees.indexOf(selectedEmployee));
+    document.getElementById('assign-btn-container').style.display = 'none';
+    assignButtonInit();
 }
 
 function pushTaskIntoTasks() {
     return tasks.push(getTask());
 }
 
-function spliceAssignedEmployee(i, assignableEmployees) {
-    return assignableEmployees.splice(i);
-}
-
-
-
-
-function cancelTask() {
-
+function spliceAssignedEmployee(i) {
+    assignableEmployees.splice(i, 1);
 }
 
 function getToday() {
@@ -119,4 +131,11 @@ function resetInputFields() {
     department = document.getElementById('department').value = "Management"
     urgency = document.getElementById('urgency').value = "high"
     description = document.getElementById('description').value = "";
+}
+
+function closeAddTasks() {
+    resetInputFields();
+    document.getElementById('addTask').classList.add('d-none');
+    document.getElementById('back-log').classList.add('d-none');
+    document.getElementById('board').classList.add('d-none');
 }
