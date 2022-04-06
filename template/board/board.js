@@ -45,14 +45,19 @@ function generateTask(element) {
     return `
         <div draggable="true" ondragstart=" startDragging(${element['id']})" class="task d-flex my-1 bg-info">
             <div class="p-2 rounded-start m-0" style="background-color: ${colourOptions[element['urgency']]}"></div>      
-            <div class="container m-0">
+            <div class="container m-0 p-0">
+
                 <div class="d-flex justify-content-between m-1">
                     <div class="border border-dark border-top-0 px-1"> 
                         ${element['title']}
                     </div>
-                    <div class="border border-dark justify-content-center align-items-center rounded-pill px-2"> 
-                        ${element['date']}
+
+                    <div>
+                        <div class="border border-dark justify-content-center align-items-center rounded-pill px-2"> 
+                            ${element['date']}
+                        </div>  
                     </div>
+                    
                 </div>
                 <div class="d-flex m-1 justify-content-between">
                     <div> 
@@ -66,6 +71,8 @@ function generateTask(element) {
                     ${element['description']}
                 </div>
             </div>
+
+            <div class="p-1">a</div>
         </div>
     `
 }
