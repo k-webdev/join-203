@@ -1,4 +1,7 @@
 <!-- bootstrap grid card -->
+<div id="assign-btn-container" style="">
+</div>
+
 <div class="add-item-container" onload="onInit()">
     <div>
         <h4>Add Task</h4>
@@ -49,20 +52,19 @@
                 <span class="field-title">Description</span>
                 <div class="form-group">
                     <textarea id="description" class="form-control" id="exampleFormControlTextarea1" rows="6"
-                    placeholder="Describe your task as detailed as possible!"></textarea>
+                        placeholder="Describe your task as detailed as possible!"></textarea>
                 </div>
             </div>
             <div class="col">
                 <div class="assigned-to">
                     <span class="field-title">Assigned to</span>
-                    <div class="img-container  mt-4 mb-2">
+                    <div class="img-container  my-4">
                         <div id="assigned-to-container">
-                            <div style="display: none;"><select id="assign-options"
-                                    class="btn btn-outline-secondary dropdown-toggle my-2 dropdown-style selection-colors"
-                                    type="button" aria-expanded="false" placeholder="Select">
-                                </select></div>
+
+                            <!-- <img class="add-assignment mx-3" src="./../../img/homer.jpg" onclick="assignEmployee()"> -->
                         </div>
-                        <div class="add-assignment mx-3" onclick="assignEmployee()">+</div>
+
+                        <img id="assign-btn" type="button" class="add-assignment mx-3" src="./../../img/plus-6-64.ico" onclick="assignEmployee()">
                     </div>
                 </div>
                 <div class="cc-buttons my-2">
