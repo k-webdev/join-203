@@ -43,14 +43,14 @@ function generateTask(element) {
 
     // returns task-html-content called from generateSection() - used above
     return `
-        <div draggable="true" ondragstart=" startDragging(${element['id']})" class="task d-flex my-1">
+        <div draggable="true" ondragstart=" startDragging(${element['id']})" class="task d-flex my-1 bg-info">
             <div class="p-2 rounded-start m-0" style="background-color: ${colourOptions[element['urgency']]}"></div>      
             <div class="container m-0">
                 <div class="d-flex justify-content-between m-1">
-                    <div class="border border-top-0 px-1"> 
+                    <div class="border border-dark border-top-0 px-1"> 
                         ${element['title']}
                     </div>
-                    <div class="border justify-content-center align-items-center rounded-pill px-2"> 
+                    <div class="border border-dark justify-content-center align-items-center rounded-pill px-2"> 
                         ${element['date']}
                     </div>
                 </div>
@@ -62,7 +62,7 @@ function generateTask(element) {
                         by ${element['assigned-to']}
                     </div>
                 </div>
-                <div class="border m-1 px-1 rounded">
+                <div class="border border-dark m-1 px-1 rounded">
                     ${element['description']}
                 </div>
             </div>

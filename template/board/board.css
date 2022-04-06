@@ -1,6 +1,8 @@
 .board-site {
     min-height: 100vh;
-    /* align-items: flex-start; */ 
+    height: 100vh;
+    background-color: white;
+    /* align-items: flex-start;  */
 }
 
 .task {
@@ -11,9 +13,15 @@
     /* margin: 3px;
     padding: 3px;
     padding-left: 10px; */
-    background: #666;    
-    color:rgb(255,255,255);    
-    
+    /* background: #666;     */
+    /* color:rgb(255,255,255);   */
+
+    color:rgba(0,0,0,0.8);
+
+}
+
+.section-bg-color {
+    background-color: rgba(0,0,0,0.15) !important;
 }
 
 .todo-section , .inprogress-section, .testing-section, .done-section{    
@@ -21,8 +29,27 @@
     display: flex ;
     flex-direction: column ;
     height: calc(100% - 55px); 
+    /* background-color: rgba(0,0,0,0.5) !important; */
     /* border-radius: 4px;    */
-    /* min-height: 100px;    */
+    /* min-height: 100px; */
+    overflow-y:scroll;
+    overflow-x:none;
 
 }
- 
+
+.urgency-color-high {
+    background-color: rgba(255,50,50,1);
+}
+
+.urgency-color-medium{
+    background-color: rgba(255,255,50,1);
+}
+
+.urgency-color-low{
+    background-color: rgba(50,255,50,1);
+}
+
+.ltl-field {
+    height: 1em;
+    width: 3em;
+}
