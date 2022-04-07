@@ -2,8 +2,11 @@
 // generate collumn-content for board
 function generateSection(keySection, filterKey) {
 
+    let visible = tasks.filter(t => t['visibleboard'] == true);
+    
+
     // filter data depends on filterKey for the section/collumn on board
-    let filteredList = tasks.filter(t => t['section'] == filterKey);
+    let filteredList = visible.filter(t => t['section'] == filterKey);
 
     //erase html-content from section/collumn
     document.getElementById(keySection).innerHTML = '';
