@@ -4,7 +4,6 @@ let dueDate;
 let department;
 let urgency;
 let description;
-let allEmployees = ['Homer', 'Marge', 'Maggie', 'Bart', 'Lisa'];
 let allEmployeePicture = [{
     'Homer': "./../../img/homer.jpg",
     'Marge': "./../../img/marge.png",
@@ -12,7 +11,7 @@ let allEmployeePicture = [{
     'Bart': "./../../img/bart.png",
     'Lisa': "./../../img/lisa.jpg"
 }];
-let assignableEmployees = allEmployees;
+let assignableEmployees;
 let assignedEmployees = [];
 
 //mouseclick eventlistener
@@ -22,6 +21,7 @@ onmousedown = function (e) {
 }
 
 function addTaskOnInit() {
+    assignableEmployees=['Homer', 'Marge', 'Maggie', 'Bart', 'Lisa'];
     setTodayInDatepicker();
     updateAssignableEmployeeList();
     onmousedown;
@@ -35,11 +35,12 @@ function setTodayInDatepicker() {
 function createTask() {
     getInputValues();
     //if title or description is empty function stops
-    if (title == '' || description == '') { return }
+    if (title == '' || description == '' || assignedEmployees.length==0) { return }
     getTask();
     pushTaskIntoTasks();
     saveDB();
     resetInputFields();
+    updateAssignableEmployeeList();
     renderAssignedEmployees();
     alert('Task created!')
 }
@@ -51,6 +52,7 @@ function resetInputFields() {
     urgency = document.getElementById('urgency').value = "high"
     description = document.getElementById('description').value = "";
     assignedEmployees = [];
+    assignableEmployees = ['Homer', 'Marge', 'Maggie', 'Bart', 'Lisa'];
 }
 
 function closeAddTasks() {
@@ -75,7 +77,7 @@ function updateAssignableEmployeeList() {
         <option onclick="selectAssignableEmployee(${assignableEmployees[i]})" class="selection-colors" value="${assignableEmployees[i]}">${assignableEmployees[i]}</option>
         `
     }
-    document.getElementById('assign-options').innerHTML += `<option id="dd-close-btn"  value="close" class="selection-colors">Close dropdown</option>`;
+    document.getElementById('assign-options').innerHTML += `<option  value="close" class="selection-colors">Close dropdown</option>`;
 }
 
 function repositionAssignToDropdown() {
