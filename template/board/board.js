@@ -83,7 +83,7 @@ function generateTask(element) {
                     <img onclick="deleteTask(${element['id']})" src="./img/box-move-right.png">
                 </div>
                 <div class="trash-icon">
-                    <img onclick="deleteTask(${element['id']})" src="./img/eye.png">
+                    <img onclick="showHideItemDialog(${element['id']})" src="./img/eye.png">
                 </div>
                 <div class="trash-icon">
                     <img onclick="showDeleteDialog(${element['id']})" src="./img/basket.png">
@@ -95,6 +95,12 @@ function generateTask(element) {
 
 // <img onclick="deleteTask(${element['id']})" src="./img/basket.png">
 
+function hideItem(id) {
+
+    tasks[parseInt(id)]['visibleboard'] = false;
+     updateBoardHTML();
+
+}
 
 function deleteTask(id) {
     // console.log('delete task with ID: ', id);
