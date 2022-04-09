@@ -2,7 +2,7 @@
 // generate collumn-content for board
 function generateSection(keySection, filterKey) {
 
-    let visible = tasks.filter(t => t['visibleboard'] == true);    
+    let visible = tasks.filter(t => t['visibleboard'] == true);
 
     // filter data depends on filterKey for the section/collumn on board
     let filteredList = visible.filter(t => t['section'] == filterKey);
@@ -26,7 +26,7 @@ function generateSection(keySection, filterKey) {
 function updateBoardHTML() {
 
     console.log('from updateBoardHTML()');
-    console.log('TASKS.length= ',tasks.length);
+    console.log('TASKS.length= ', tasks.length);
 
     generateSection('todo-section', 'todo');
     generateSection('inprogress-section', 'inprogress');
@@ -80,7 +80,7 @@ function generateTask(element) {
 
             <div class="d-flex flex-column justify-content-end align-items-center mx-1 py-2">
                 <div class="trash-icon ">
-                    <img onclick="deleteTask(${element['id']})" src="./img/box-move-right.png">
+                    <img onclick="showMoveToDialog(${element['id']})" src="./img/box-move-right.png">
                 </div>
                 <div class="trash-icon">
                     <img onclick="showHideItemDialog(${element['id']})" src="./img/eye.png">
@@ -96,10 +96,8 @@ function generateTask(element) {
 // <img onclick="deleteTask(${element['id']})" src="./img/basket.png">
 
 function hideItem(id) {
-
     tasks[parseInt(id)]['visibleboard'] = false;
-     updateBoardHTML();
-
+    updateBoardHTML();
 }
 
 function deleteTask(id) {
@@ -115,4 +113,9 @@ function freshupIDs() {
         tasks[index]['id'] = index;
         console.log(tasks[index]);
     }
+}
+
+function changeSection(id, section) {
+    tasks[parseInt(id)]['section'] = section;
+    updateBoardHTML();
 }
