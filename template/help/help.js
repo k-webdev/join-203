@@ -6,18 +6,18 @@ function openBoardHelp() {
     <h5>Move Task-Items</h5>
     <p> There are two ways to move task-items around within sections. The first way: just drag chosen item and drop it to
       a collumn you want.
-      The second way: by pressing the <span><img src="./../../img/box-move-right-small.png"></span>-button in a
+      The second way: by pressing the <span><img src="./img/box-move-right-small.png"></span>-button in a
       task-item a 'MOVE TO'-Dialog apears. Choose as you wish ;)
     </p>
 
     <h5>Hide Task-Items</h5>
     <p>
-      Use <span><img src="./../../img/eye-small.png"></span>-button to hide the task-item. The task can become visible again by handle it in the back log.     
+      Use <span><img src="./img/eye-small.png"></span>-button to hide the task-item. The task can become visible again by handle it in the back log.     
     </p>
 
     <h5>Delete Task-Items</h5>
     <p>
-      Use <span><img src="./../../img/basket-small.png"></span>-button to delete the task-item. Caution! This action is irreversible. The dataset will be deleted in the hole application.
+      Use <span><img src="./img/basket-small.png"></span>-button to delete the task-item. Caution! This action is irreversible. The dataset will be deleted in the hole application.
     </p>
 
     <h5>Color Code</h5>
