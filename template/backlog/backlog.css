@@ -1,25 +1,30 @@
-*{
+* {
     box-sizing: border-box;
 
 }
 
-.link-design{
+.link-design {
     color: white;
 }
 
 
 /* ================================ */
 
-
-table{
-    margin: 16px;
+.backlog-headline {
+    width: 100%;
 }
 
-table thead th:last-child{
+
+table {
+    margin: 16px;
+    width: 95%;
+}
+
+table thead th:last-child {
     text-align: center !important;
 }
 
-table thead{
+table thead {
     border-style: none !important;
     text-align: left;
     position: sticky;
@@ -27,54 +32,114 @@ table thead{
     background-color: #0dcaf0;
 }
 
-table thead th:first-child{
+table thead th:first-child {
     border-radius: 4px 0 0 0;
 }
 
-table thead th:last-child{
+table thead th:last-child {
     border-radius: 0 4px 0 0;
     height: 50px;
 }
 
-table tbody tr:nth-child(even){
+table tbody tr:nth-child(even) {
     background-color: #0dcaf0;
 }
-table tbody td{
+
+table tbody tr:nth-child(2n+1) {
+    background-color: #0d6efd;
+}
+
+table tbody td {
     padding: 16px;
 }
 
-table tbody tr:hover{
+table tbody tr:hover {
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
 }
 
-table tbody td:first-child{
+table tbody td:first-child {
     border-radius: 4px 0 0 4px;
 }
 
-table tbody td:last-child{
+table tbody td:last-child {
     border-radius: 0 4px 4px 0;
 }
 
 
+.action-for-backlog{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.action-for-backlog-content{
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    border: solid black 4px;
+    border-radius: 16px;
+
+}
 
 
 
 
-
-
-
-.backlog-sort-bg{
+.backlog-sort-bg {
     height: 100px;
     display: flex;
     align-items: center;
     padding: 16px;
 }
 
-.img-assigned{
+.img-assigned {
     width: 70px;
     height: 70px;
     border-radius: 100%;
-    border: 4px red solid;/* to change for user color */
+    border: 4px red solid;
+    /* to change for user color */
     object-fit: cover;
+}
+
+/* RESPONSIV */
+
+@media(max-width: 1300px) {
+
+    .backlog-headline h3 {
+        margin-left: 200px;
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    .img-assigned-sort {
+        display: none;
+    }
+
+    table{
+        width: 100%;
+        margin: 0;
+    }
+
+    table h4{
+        font-size: 12px;
+    }
+
+    th{
+        font-size: 12px;
+        text-align: center;
+    }
+
+    table p{
+        font-size: 12px;
+    }
+
 }

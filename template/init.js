@@ -1,6 +1,8 @@
 function init() {
     includeHTML(); // W3C Include 
     loadDB();    
+    responsivMenuUp();
+    responsivMenuDown();
 }
 
 function saveDB() {

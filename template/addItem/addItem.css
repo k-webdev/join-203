@@ -8,7 +8,9 @@
     color: blue;
 }
 .add-item-container{
-    padding: 2rem;
+    padding: 8rem 2rem 2rem 2rem;
+    width: 800px;
+
 }
 .field-title{
     font-size: 1.1rem;
@@ -67,4 +69,24 @@ textarea {
 .selection-colors{
     background: white;
     color: black;
+}
+
+@media(max-width: 650px){
+
+    .add-item-container{
+        padding: 4rem 0 0 0;
+    }
+
+}
+
+@media(max-width: 350px){
+
+    .add-item-container-headline{
+        text-align: center;
+    }
+
+    .row{
+        flex-direction: column;
+    }
+
 }

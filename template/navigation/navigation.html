@@ -1,10 +1,11 @@
 
-<div id="navbar-container" class="navbar-sort bg-primary">
+<div class="navbar-sort-in bg-primary">
     <!-- background color and positions -->
     <div class="logo-top">
         <img src="./img/logo.png">
     </div>
     <nav class="nav flex-column nav-link-sort">
+        <a onclick="openStartScreen()" class="nav-link" href="#">Start</a>
         <a onclick="openBoard(); updateBoardHTML()" class="nav-link" href="#">Board</a>
         <a onclick="openBackLog(); addBacklogs()" class="nav-link" href="#">Back Log</a>
         <a onclick="openAddTasks(); addTaskOnInit()" class="nav-link" href="#">Add Task</a>

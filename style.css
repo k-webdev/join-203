@@ -1,5 +1,6 @@
 body{
     min-height: 100vh !important;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* === SCROLLBAR === */
@@ -42,9 +43,9 @@ body{
 }
 /* Navbar */
 .size{
-  height: 100vh;
-  position: absolute;
+  position: fixed;
   width: 200px !important;
+  top: 50px;
 }
 .cover-navbar{
   min-height: 100vh;
@@ -54,6 +55,8 @@ body{
 
 .show-content{
     display: flex;
+    /* align-items: center; */
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .board{
@@ -62,6 +65,7 @@ body{
 }
 
 .backlog{
+  margin-left: 200px;
   animation: zoomIn 0.35s ease-in;
   width: 100%;
   min-height: 100vh;
@@ -70,6 +74,9 @@ body{
 .add-task{
   animation: zoomIn 0.35s ease-in;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes zoomIn {
@@ -80,3 +87,15 @@ body{
     transform: scale(1);
   }
 }
+
+
+/* ================ RESPONSIV ================ */
+
+@media(max-width: 1300px){
+
+  .backlog{
+    margin-left: 0;
+  }
+
+}
+
