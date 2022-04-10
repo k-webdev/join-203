@@ -42,7 +42,7 @@ function createTask() {
     resetInputFields();
     updateAssignableEmployeeList();
     renderAssignedEmployees();
-    alert('Task created!')
+    alert('Task created!');
 }
 
 function resetInputFields() {
