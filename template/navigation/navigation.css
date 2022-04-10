@@ -2,22 +2,38 @@
     display: none;
 }
 
-.navbar-sort {
-    position: fixed;
+.navbar-sort-out{
+    z-index: 1;
+    position: absolute;
+    left: -200px;
+    top: 25px;
     height: calc(100vh - 100px);
     width: 200px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
+    animation: slideOut 0.5s ease-out;
 }
 
-.navbar-sort a {
+.navbar-sort-in {
+    z-index: 1;
+    position: absolute;
+    left: 0px;
+    top: 25px;
+    height: calc(100vh - 100px);
+    width: 200px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    animation: slideIn 0.5s ease-in;
+}
+
+.navbar-sort-in a {
     color: white;
     font-size: 21px;
     border-left: 4px solid transparent;
     border-radius: 1px;
 }
 
-.navbar-sort a:hover {
+.navbar-sort-in a:hover {
     border-left: 4px solid white;
     color: rgba(255, 255, 255, 0.7);
 }
@@ -46,15 +62,66 @@
     border: solid white 4px;
 }
 
-.menu-button{
-    position: absolute;
-    top: 8px;
-    left: 8px;
+.menu-button {
+    z-index: 10;
+    position: fixed;
+    top: 0px;
+    left: -50px;
     cursor: pointer;
-    padding: 8px;
-    border-radius: 100%;
+    padding: 16px;
+    animation: btnSlideOut 0.5s ease-out;
 }
 
-.menu-button:hover {
-    opacity: 0.8;
+.menu-button :hover {
+    opacity: 0.7;
+}
+
+@keyframes btnSlideIn {
+    from{
+        left: -50px; 
+    }
+    to{
+        left: 8px;
+    }
+}
+
+@keyframes btnSlideOut {
+    from{
+        left: 8px;
+    }
+    to{
+        left: -50px;
+    }
+}
+
+@keyframes slideIn {
+    from{
+        left: -200px; 
+    }
+    to{
+        left: 0px;
+    }
+}
+
+@keyframes slideOut {
+    from{
+        left: 0px;
+    }
+    to{
+        left: -200px;
+    }
+}
+
+
+/* ================ RESPONSIV ================ */
+
+@media(max-width: 1300px){
+
+    .menu-button{
+        left: 25px;
+        animation: btnSlideIn 0.5s ease-in;
+    }
+
+    
+
 }
