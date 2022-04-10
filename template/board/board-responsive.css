@@ -1,4 +1,10 @@
 @media(max-width:1200px){
+    .board-site {
+        min-height: 100vh;
+        width: calc(100wh - 200px);    
+        background-color: white;   
+        margin-left: 0px;
+    }
 
     .legend-pane {
         display: none !important;
