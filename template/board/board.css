@@ -38,6 +38,10 @@
 
 }
 
+/* .todo-section:hover , .inprogress-section:hover, .testing-section:hover, .done-section:hover{
+    background-color: rgba(0,0,0,0.15) ;
+} */
+
 .urgency-color-high {
     background-color: rgba(255,50,50,1);
 }
@@ -63,6 +67,13 @@
 .trash-icon img{
     max-width: 100%;
     max-height: 100%;
+    cursor: pointer;
+}
+
+.trash-icon img:hover{
+    background-color: rgba(255,255,255,0.4) ;
+    border-style: solid;
+    border-width: 1px;
 }
 
 .sections-container{
