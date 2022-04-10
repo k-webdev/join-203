@@ -36,10 +36,6 @@
 
 }
 
-/* .todo-section:hover , .inprogress-section:hover, .testing-section:hover, .done-section:hover{
-    background-color: rgba(0,0,0,0.15) ;
-} */
-
 .urgency-color-high {
     background-color: rgba(255,50,50,1);
 }

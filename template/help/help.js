@@ -1,3 +1,7 @@
+/**
+ * This function generates the help-section for the board-site
+ * 
+ */
 function openBoardHelp() {
     document.getElementById('get-help-content').innerHTML = '';
 
