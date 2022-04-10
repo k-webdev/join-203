@@ -1,0 +1,11 @@
+@media(max-width:1200px){
+
+    .legend-pane {
+        display: none !important;
+    }
+    .sections-container{
+        display: flex;
+        flex-direction: column !important;
+    }
+    
+}

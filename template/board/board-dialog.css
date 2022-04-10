@@ -1,0 +1,31 @@
+.board-dialog {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-content {
+    background-color:white;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    /* height:50vh; */
+    /* width: 50vw; */    
+    min-height: 200px;
+    min-width: 300px;
+}
+
+.cancel-button, .do-button{
+  cursor: pointer;  
+}
+
+.cancel-button:hover, .do-button:hover{
+    background-color: lightgray;
+}

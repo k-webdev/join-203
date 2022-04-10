@@ -1,23 +1,55 @@
-<div class="container-sm board-site d-flex px-1 py-1">    
-    
-    <div class="container-sm mx-1 my-1 bg-primary rounded">
-        <h3>TO DO</h3>
-        <div class="todo-section  " id="todo-section" ondrop="moveTo('todo')" ondragover="allowDrop(event)"></div>
+<div class="board-site d-flex flex-column px-1 py-1">
+
+    <div class="legend-pane d-flex justify-content-between m-1 p-1 section-bg-color rounded">
+        <div>Urgency Color Code :</div>
+
+        <div class="d-flex align-items-center">
+            <div class="ltl-field urgency-color-high border border-dark rounded"></div>
+            <div> = high</div>
+        </div>
+
+        <div class="d-flex align-items-center">
+            <div class="ltl-field urgency-color-medium border border-dark rounded"></div>
+            <div> = medium</div>
+        </div>
+
+        <div class="d-flex align-items-center">
+            <div class="ltl-field urgency-color-low border border-dark rounded"></div>
+            <div> = low</div>
+        </div>
+
     </div>
 
-    <div class="container-sm mx-1 my-1 bg-primary rounded">
-        <h3>IN PROGRESS</h3>
-        <div class="inprogress-section  " id="inprogress-section" ondrop="moveTo('inprogress')" ondragover="allowDrop(event)"></div>
-    </div>
+    <div class="sections-container">
 
-    <div class="container-sm mx-1 my-1 bg-primary rounded">
-        <h3>TESTING</h3>
-        <div class="testing-section  " id="testing-section" ondrop="moveTo('testing')" ondragover="allowDrop(event)"></div>
-    </div>
+        <div class="section-pane m-1 p-1 section-bg-color rounded">
+            <h3>TO DO</h3>
+            <div class="todo-section " id="todo-section" ondrop="moveTo('todo')"
+                ondragover="allowDrop(event); doHighlight('todo-section')" ondragleave="doHighlightAway('todo-section')"></div>
+        </div>
 
-    <div class="container-sm mx-1 my-1 bg-primary rounded">
-        <h3>DONE</h3>
-        <div class="done-section " id="done-section" ondrop="moveTo('done')" ondragover="allowDrop(event)"></div>
+        <div class="section-pane m-1 p-1 section-bg-color rounded">
+            <h3>IN PROGRESS</h3>
+            <div class="inprogress-section " id="inprogress-section" ondrop="moveTo('inprogress')"
+                ondragover="allowDrop(event); doHighlight('inprogress-section')" ondragleave="doHighlightAway('inprogress-section')"></div>
+        </div>
+
+        <div class="section-pane m-1 p-1 section-bg-color rounded">
+            <h3>TESTING</h3>
+            <div class="testing-section " id="testing-section" ondrop="moveTo('testing')"
+                ondragover="allowDrop(event); doHighlight('testing-section')" ondragleave="doHighlightAway('testing-section')">
+            </div>
+        </div>
+
+        <div class="section-pane m-1 p-1 section-bg-color rounded">
+            <h3>DONE</h3>
+            <div class="done-section " id="done-section" ondrop="moveTo('done')"
+                ondragover="allowDrop(event); doHighlight('done-section')" ondragleave="doHighlightAway('done-section')"></div>
+        </div>
+
     </div>
-    
 </div>
+
+<!-- <div>
+    <img src="./img/basket.png">
+</div> -->
