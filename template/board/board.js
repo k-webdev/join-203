@@ -51,7 +51,7 @@ function generateTask(element) {
     return `
         <div draggable="true" ondragstart=" startDragging(${element['id']})" class="task d-flex my-1 bg-info">
             <div class="p-2 rounded-start m-0" style="background-color: ${colourOptions[element['urgency']]}"></div>      
-            <div class="container m-0 p-0">
+            <div class="m-0 p-0" style="width:100%;">
 
                 <div class="d-flex justify-content-between m-1">
                     <div class="border border-dark border-top-0 px-1"> 
@@ -82,9 +82,11 @@ function generateTask(element) {
                 <div class="trash-icon ">
                     <img onclick="showMoveToDialog(${element['id']})" src="./img/box-move-right.png">
                 </div>
-                <div class="trash-icon">
-                    <img onclick="showHideItemDialog(${element['id']})" src="./img/eye.png">
-                </div>
+                
+                    <div class="trash-icon">
+                        <img onclick="showHideItemDialog(${element['id']})" src="./img/eye.png">
+                    </div>
+                
                 <div class="trash-icon">
                     <img onclick="showDeleteDialog(${element['id']})" src="./img/basket.png">
                 </div>  
