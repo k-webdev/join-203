@@ -24,24 +24,27 @@
 
         <div class="section-pane m-1 p-1 section-bg-color rounded">
             <h3>TO DO</h3>
-            <div class="todo-section " id="todo-section" ondrop="moveTo('todo')" ondragover="allowDrop(event)"></div>
+            <div class="todo-section " id="todo-section" ondrop="moveTo('todo')"
+                ondragover="allowDrop(event); doHighlight('todo-section')" ondragleave="doHighlightAway('todo-section')"></div>
         </div>
 
         <div class="section-pane m-1 p-1 section-bg-color rounded">
             <h3>IN PROGRESS</h3>
             <div class="inprogress-section " id="inprogress-section" ondrop="moveTo('inprogress')"
-                ondragover="allowDrop(event)"></div>
+                ondragover="allowDrop(event); doHighlight('inprogress-section')" ondragleave="doHighlightAway('inprogress-section')"></div>
         </div>
 
         <div class="section-pane m-1 p-1 section-bg-color rounded">
             <h3>TESTING</h3>
-            <div class="testing-section " id="testing-section" ondrop="moveTo('testing')" ondragover="allowDrop(event)">
+            <div class="testing-section " id="testing-section" ondrop="moveTo('testing')"
+                ondragover="allowDrop(event); doHighlight('testing-section')" ondragleave="doHighlightAway('testing-section')">
             </div>
         </div>
 
         <div class="section-pane m-1 p-1 section-bg-color rounded">
             <h3>DONE</h3>
-            <div class="done-section " id="done-section" ondrop="moveTo('done')" ondragover="allowDrop(event)"></div>
+            <div class="done-section " id="done-section" ondrop="moveTo('done')"
+                ondragover="allowDrop(event); doHighlight('done-section')" ondragleave="doHighlightAway('done-section')"></div>
         </div>
 
     </div>

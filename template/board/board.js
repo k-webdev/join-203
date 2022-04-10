@@ -119,3 +119,13 @@ function changeSection(id, section) {
     tasks[parseInt(id)]['section'] = section;
     updateBoardHTML();
 }
+
+function doHighlight(id) {
+    document.getElementById(id).classList.add('section-bg-color-highlighted');
+}
+
+function doHighlightAway(id) {
+    document.getElementById(id).classList.remove('section-bg-color-highlighted');
+}
+
+

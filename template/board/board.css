@@ -24,6 +24,10 @@
     background-color: rgba(0,0,0,0.1) ;
 }
 
+.section-bg-color-highlighted {
+    background-color: rgba(0,0,0,0.15) ;
+}
+
 .todo-section , .inprogress-section, .testing-section, .done-section{    
    
     display: flex ;
