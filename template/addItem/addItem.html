@@ -1,6 +1,9 @@
 <!-- bootstrap grid card -->
-<div class="add-item-container" onload="onInit()">
-    <div class="add-item-container-headline">
+<div id="assign-btn-container" style="display: none;">
+</div>
+
+<div id = "add-task-container"class="add-item-container" onload="onInit()">
+    <div>
         <h4>Add Task</h4>
         <p class="sub-title">Learning Management System</p>
     </div>
@@ -8,13 +11,13 @@
         <div class="row">
             <div class="col">
                 <span class="field-title">Title</span>
-                <input id="title" type="text" class="form-control my-2" placeholder="What do you want to get done?"
+                <input  id="title" type="text" class="form-control my-2" placeholder="What do you want to get done?"
                     aria-label="First name">
             </div>
             <div class="col">
                 <span class="field-title">Due Date</span>
 
-                <div><input type="date" id="date" class="my-2 form-control" name="trip-start" value="" min="2022-01-01"
+                <div><input type="date" id="date" class="my-2 form-control" name="trip-start"  min="2022-01-01"
                         max="9999-12-31"></div>
 
             </div>
@@ -49,24 +52,22 @@
                 <span class="field-title">Description</span>
                 <div class="form-group">
                     <textarea id="description" class="form-control" id="exampleFormControlTextarea1" rows="6"
-                    placeholder="Describe your task as detailed as possible!"></textarea>
+                        placeholder="Describe your task as detailed as possible!"></textarea>
                 </div>
             </div>
             <div class="col">
                 <div class="assigned-to">
                     <span class="field-title">Assigned to</span>
-                    <div class="img-container  mt-4 mb-2">
+                    <div class="img-container  my-4">
                         <div id="assigned-to-container">
-                            <div style="display: none;"><select id="assign-options"
-                                    class="btn btn-outline-secondary dropdown-toggle my-2 dropdown-style selection-colors"
-                                    type="button" aria-expanded="false" placeholder="Select">
-                                </select></div>
+                          
                         </div>
-                        <div class="add-assignment mx-3" onclick="assignEmployee()">+</div>
+
+                        <img id="assign-btn" type="button" class="add-assignment mx-3" src="./../../img/plus-6-64.ico" onclick="openAssignEmployeeDropdown()">
                     </div>
                 </div>
                 <div class="cc-buttons my-2">
-                    <button onclick="cancelTask()" id="cancel-btn" class="btn-style">Cancel</button>
+                    <button onclick="closeAddTasks()" id="cancel-btn" class="btn-style">Cancel</button>
                     <button onclick="createTask()" id="create-btn" class="btn-primary">Create Task</button>
                 </div>
             </div>
