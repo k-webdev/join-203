@@ -35,6 +35,13 @@
     <script src="./template/help/help.js"></script>
     <!-- ------------------------------- DK navbar end ------------------------------- -->
 
+    <!-- ------------------------------ DK start screen ------------------------------ -->
+
+    <link rel="stylesheet" href="./template/startScreen/startscreen.css">
+    <script src="./template/startScreen/startScreen.js"></script>
+
+    <!-- ----------------------------- DK start screen end --------------------------- -->
+
     <!-- ------------------------------- DK backlog start ------------------------------- -->
     <script src="./template/backlog/backlog.js"></script>
     <link rel="stylesheet" href="./template/backlog/backlog.css">
@@ -65,20 +72,26 @@
 
 </head>
 
-<body class="bg-primary" onload="init()">
+<body onload="init()">
 
     <!-- show-content div shows every page. The id was used by script.js to change the window values. -->
-    <div class="show-content bg-primary">
+    <div class="show-content">
 
         <!-- DK navbar start -->
         <!-- class="size" has no propertys(empty). Visibility: every time if Join is not in responsiv mode.  -->
-        <div class="size" w3-include-html="./template/navigation/navigation.html"></div>
-        <div class="cover-navbar"></div>
+        <div class="menu-button" onclick="openCloseMenu()">
+            <img src="./img/menu.png">
+        </div>
+        <div class="navbar-sort-in" id="navbar-container" w3-include-html="./template/navigation/navigation.html"></div>
         <!-- DK navbar end -->
 
         <!-- DK backlog start -->
         <div id="back-log" class="backlog d-none" w3-include-html="./template/backlog/backlog.html"></div>
         <!-- DK backlog end -->
+
+        <!-- DK start screen -->
+        <div id="start-screen" class="start-screen-bg" w3-include-html="./template/startScreen/starScreen.html"></div>
+        <!-- DK start screen end -->
 
         <!-- board Valentin -->
         <div id="board" class="board d-none" w3-include-html="./template/board/board.html"></div>
