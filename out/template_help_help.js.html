@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: template/help/help.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: template/help/help.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * This function generates the help-section for the board-site
+ * 
+ */
+function openBoardHelp() {
+    document.getElementById('get-help-content').innerHTML = '';
+
+    document.getElementById('get-help-content').innerHTML = `
+    
+    &lt;h5>Move Task-Items&lt;/h5>
+    &lt;p> There are two ways to move task-items around within sections. The first way: just drag chosen item and drop it to
+      a collumn you want.
+      The second way: by pressing the &lt;span>&lt;img src="./img/box-move-right-small.png">&lt;/span>-button in a
+      task-item a 'MOVE TO'-Dialog apears. Choose as you wish ;)
+    &lt;/p>
+
+    &lt;h5>Hide Task-Items&lt;/h5>
+    &lt;p>
+      Use &lt;span>&lt;img src="./img/eye-small.png">&lt;/span>-button to hide the task-item. The task can become visible again by handle it in the back log.     
+    &lt;/p>
+
+    &lt;h5>Delete Task-Items&lt;/h5>
+    &lt;p>
+      Use &lt;span>&lt;img src="./img/basket-small.png">&lt;/span>-button to delete the task-item. Caution! This action is irreversible. The dataset will be deleted in the hole application.
+    &lt;/p>
+
+    &lt;h5>Color Code&lt;/h5>
+    &lt;p>
+       On the left site of the task-item represents a colored vertical bar the urgency of the task:
+    &lt;/p>
+    &lt;div>
+       &lt;div class="d-flex align-items-center">
+          &lt;div class="ltl-field urgency-color-high border border-dark rounded">&lt;/div>
+          &lt;div> = high&lt;/div>
+       &lt;/div>
+ 
+       &lt;div class="d-flex align-items-center">
+          &lt;div class="ltl-field urgency-color-medium border border-dark rounded">&lt;/div>
+          &lt;div> = medium&lt;/div>
+       &lt;/div>
+ 
+       &lt;div class="d-flex align-items-center">
+          &lt;div class="ltl-field urgency-color-low border border-dark rounded">&lt;/div>
+          &lt;div> = low&lt;/div>
+       &lt;/div>
+ 
+    &lt;/div>
+
+    `;
+}
+
+function openBackLogHelp() {
+    document.getElementById('get-help-content').innerHTML = '';
+
+    document.getElementById('get-help-content').innerHTML = `
+    
+    &lt;span>
+
+    &lt;p>&lt;b>Backlog:&lt;/b>&lt;/p>
+    Here you will find an overview of all the tasks.
+
+    &lt;/span>
+
+    `;
+}
+
+function openAddTask() {
+    document.getElementById('get-help-content').innerHTML = '';
+
+    document.getElementById('get-help-content').innerHTML = `
+    
+    &lt;span>
+
+    &lt;b>Title:&lt;/b> Title that is as meaningful as possible.&lt;br>&lt;br>
+    
+    &lt;b>Department/Urgency:&lt;/b> Drop-down to select the relevant area.&lt;br>&lt;br>
+
+    &lt;b>Date:&lt;/b> Set the start date for the task.&lt;br>&lt;br>
+    
+    &lt;b>Description:&lt;/b> Description of the activity as detailed as possible.&lt;br>&lt;br>
+    
+    &lt;b>Assigned To:&lt;/b> Clicking on + leads to a dropdown, which after selection adds the picture of the selected employee. 
+    To delete the employee, click on the employee's picture. &lt;br>&lt;br>
+    
+    &lt;b>Create Task:&lt;/b> Passes the entered data to the backlog, where the data is presented in an overview. &lt;br>&lt;br>
+    
+    &lt;b>Cancel:&lt;/b> Leads to the closing of the add-task dialog window and deletes all entries that have been made so far.
+
+    &lt;/span>
+
+    `;
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addBacklogs">addBacklogs</a></li><li><a href="global.html#allowDrop">allowDrop</a></li><li><a href="global.html#changeSection">changeSection</a></li><li><a href="global.html#currentDraggedElement">currentDraggedElement</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#doCancel">doCancel</a></li><li><a href="global.html#doHighlight">doHighlight</a></li><li><a href="global.html#doHighlightAway">doHighlightAway</a></li><li><a href="global.html#freshupIDs">freshupIDs</a></li><li><a href="global.html#generateDeleteDialog">generateDeleteDialog</a></li><li><a href="global.html#generateHideItemDialog">generateHideItemDialog</a></li><li><a href="global.html#generateMoveToDialog">generateMoveToDialog</a></li><li><a href="global.html#generateSection">generateSection</a></li><li><a href="global.html#generateTask">generateTask</a></li><li><a href="global.html#hideItem">hideItem</a></li><li><a href="global.html#includeHTML">includeHTML</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadDB">loadDB</a></li><li><a href="global.html#loadJSONFromServer">loadJSONFromServer</a></li><li><a href="global.html#moveTo">moveTo</a></li><li><a href="global.html#openBoardHelp">openBoardHelp</a></li><li><a href="global.html#saveDB">saveDB</a></li><li><a href="global.html#saveJSONToServer">saveJSONToServer</a></li><li><a href="global.html#showDeleteDialog">showDeleteDialog</a></li><li><a href="global.html#showHideItemDialog">showHideItemDialog</a></li><li><a href="global.html#showMoveToDialog">showMoveToDialog</a></li><li><a href="global.html#startDragging">startDragging</a></li><li><a href="global.html#updateBoardHTML">updateBoardHTML</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sun Apr 10 2022 20:22:53 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

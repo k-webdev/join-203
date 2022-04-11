@@ -112,6 +112,7 @@ function generateTask(element) {
  */
 function hideItem(id) {
     tasks[parseInt(id)]['visibleboard'] = false;
+    // saveDB();
     updateBoardHTML();
 }
 
@@ -124,6 +125,7 @@ function hideItem(id) {
 function deleteTask(id) {    
     tasks.splice(parseInt(id), 1);    
     freshupIDs();
+    // saveDB();
     updateBoardHTML();
 }
 
@@ -146,6 +148,7 @@ function freshupIDs() {
  */
 function changeSection(id, section) {
     tasks[parseInt(id)]['section'] = section;
+    // saveDB();
     updateBoardHTML();
 }
 
@@ -161,7 +164,7 @@ function doHighlight(id) {
 /**
  * Thisfunction removes an class of a DIV-container to remove the highlight from backround of the component by draggingout
  * 
- * @param {String} id - of the DIV-container
+ * @param {String} id - ID of the DIV-container
  */
 function doHighlightAway(id) {
     document.getElementById(id).classList.remove('section-bg-color-highlighted');

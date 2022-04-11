@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: template/board/board.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: template/board/board.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+
+/**
+ * This function filter and generates content needed for the task-items which can be shown on the section-column
+ * 
+ * @param {String} keySection - contains the info where to render the task-item
+ * @param {String} filterKey - contains the keyword to filter task-item
+ */
+function generateSection(keySection, filterKey) {
+
+    let visible = tasks.filter(t => t['visibleboard'] == true);
+
+    // filter data depends on filterKey for the section/collumn on board
+    let filteredList = visible.filter(t => t['section'] == filterKey);
+
+    //erase html-content from section/collumn
+    document.getElementById(keySection).innerHTML = '';
+
+
+    for (let index = 0; index &lt; filteredList.length; index++) {
+
+        // put an element from filteredList and assign it to variable 'element'
+        const element = filteredList[index];
+        // add a generated html-content for section/collumn with content of variable 'element' 
+        document.getElementById(keySection).innerHTML += generateTask(element);
+    }
+
+}
+
+
+/**
+ * This function generates calls several other functions to render the whole borad-site. This function should be called whenever the Tasks variable has changed
+ */
+function updateBoardHTML() {
+
+    // console.log('from updateBoardHTML()');
+    // console.log('TASKS.length= ', tasks.length);
+
+    generateSection('todo-section', 'todo');
+    generateSection('inprogress-section', 'inprogress');
+    generateSection('testing-section', 'testing');
+    generateSection('done-section', 'done');   
+}
+
+/**
+ * This function generates a HTML-content of task-item. 
+ * 
+ * @param {JSON-Array} element - is a JSON-Array stored in the global tasks-variable
+ * @returns - String with HTML-content
+ */
+function generateTask(element) {
+
+    // hardcoded colors for color bar representing 'urgency' - used below
+    let colourOptions = {
+        'high': 'rgba(255,50,50,1)',
+        'medium': 'rgba(255,255,50,1)',
+        'low': 'rgba(50,255,50,1)',
+    };
+
+    // returns task-html-content called from generateSection() - used above
+    return `
+        &lt;div draggable="true" ondragstart=" startDragging(${element['id']})" class="task d-flex my-1 bg-info">
+            &lt;div class="p-2 rounded-start m-0" style="background-color: ${colourOptions[element['urgency']]}">&lt;/div>      
+            &lt;div class="m-0 p-0" style="width:100%;">
+
+                &lt;div class="d-flex justify-content-between m-1">
+                    &lt;div class="border border-dark border-top-0 px-1"> 
+                        ${element['title']}
+                    &lt;/div>
+
+                    &lt;div>
+                        &lt;div class="border border-dark justify-content-center align-items-center rounded-pill px-2"> 
+                            ${element['date']}
+                        &lt;/div>  
+                    &lt;/div>
+                    
+                &lt;/div>
+                &lt;div class="d-flex m-1 justify-content-between">
+                    &lt;div> 
+                        - ${element['department']} -
+                    &lt;/div>
+                    &lt;div> 
+                        by ${element['assigned-to']}
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="border border-dark m-1 px-1 rounded">
+                    ${element['description']}
+                &lt;/div>
+            &lt;/div>
+
+            &lt;div class="d-flex flex-column justify-content-end align-items-center mx-1 py-2">
+                &lt;div class="trash-icon ">
+                    &lt;img onclick="showMoveToDialog(${element['id']})" src="./img/box-move-right.png">
+                &lt;/div>
+                
+                    &lt;div class="trash-icon">
+                        &lt;img onclick="showHideItemDialog(${element['id']})" src="./img/eye.png">
+                    &lt;/div>
+                
+                &lt;div class="trash-icon">
+                    &lt;img onclick="showDeleteDialog(${element['id']})" src="./img/basket.png">
+                &lt;/div>  
+            &lt;/div>
+        &lt;/div>
+    `
+}
+
+/**
+ * This function change a property of the task-item to be hidden and refreshes the board-site
+ * 
+ * @param {String} id - This variable contains the ID of task-item to be hidden. The value of ID should equal to index-position in tasks-variable.
+ */
+function hideItem(id) {
+    tasks[parseInt(id)]['visibleboard'] = false;
+    updateBoardHTML();
+}
+
+/**
+ * This function delete the task-item and refreshes the board-site
+ * 
+ * @param {String} id - This variable contains the ID of task-item to be deleted. The value of ID should equal to index-position in tasks-variable.
+ */
+
+function deleteTask(id) {    
+    tasks.splice(parseInt(id), 1);    
+    freshupIDs();
+    updateBoardHTML();
+}
+
+/**
+ * This works assigns correct values ​​to the ID. Needed after deleting a task-item
+ */
+function freshupIDs() {
+    for (let index = 0; index &lt; tasks.length; index++) {
+        tasks[index]['id'] = index;
+        console.log(tasks[index]);
+    }
+}
+
+
+/**
+ * This function chages a Property of an task-item to be moved to another section and refreshes the board-sit.
+ * 
+ * @param {String} id - id of a task-item
+ * @param {String} section - contains the sectionname where task-item is be moved
+ */
+function changeSection(id, section) {
+    tasks[parseInt(id)]['section'] = section;
+    updateBoardHTML();
+}
+
+/**
+ * Thisfunction adds an class to a DIV-container to highlight the backround of the component by draggingover
+ * 
+ * @param {String} id - of the DIV-container
+ */
+function doHighlight(id) {
+    document.getElementById(id).classList.add('section-bg-color-highlighted');
+}
+
+/**
+ * Thisfunction removes an class of a DIV-container to remove the highlight from backround of the component by draggingout
+ * 
+ * @param {String} id - ID of the DIV-container
+ */
+function doHighlightAway(id) {
+    document.getElementById(id).classList.remove('section-bg-color-highlighted');
+}
+
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addBacklogs">addBacklogs</a></li><li><a href="global.html#allowDrop">allowDrop</a></li><li><a href="global.html#changeSection">changeSection</a></li><li><a href="global.html#currentDraggedElement">currentDraggedElement</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#doCancel">doCancel</a></li><li><a href="global.html#doHighlight">doHighlight</a></li><li><a href="global.html#doHighlightAway">doHighlightAway</a></li><li><a href="global.html#freshupIDs">freshupIDs</a></li><li><a href="global.html#generateDeleteDialog">generateDeleteDialog</a></li><li><a href="global.html#generateHideItemDialog">generateHideItemDialog</a></li><li><a href="global.html#generateMoveToDialog">generateMoveToDialog</a></li><li><a href="global.html#generateSection">generateSection</a></li><li><a href="global.html#generateTask">generateTask</a></li><li><a href="global.html#hideItem">hideItem</a></li><li><a href="global.html#includeHTML">includeHTML</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadDB">loadDB</a></li><li><a href="global.html#loadJSONFromServer">loadJSONFromServer</a></li><li><a href="global.html#moveTo">moveTo</a></li><li><a href="global.html#openBoardHelp">openBoardHelp</a></li><li><a href="global.html#saveDB">saveDB</a></li><li><a href="global.html#saveJSONToServer">saveJSONToServer</a></li><li><a href="global.html#showDeleteDialog">showDeleteDialog</a></li><li><a href="global.html#showHideItemDialog">showHideItemDialog</a></li><li><a href="global.html#showMoveToDialog">showMoveToDialog</a></li><li><a href="global.html#startDragging">startDragging</a></li><li><a href="global.html#updateBoardHTML">updateBoardHTML</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sun Apr 10 2022 20:22:53 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

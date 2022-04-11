@@ -118,7 +118,5 @@ function generateMoveToDialog(id) {
          <div class="cancel-button d-flex border border-dark py-2 px-4 m-2 rounded" id="button-cancel" onclick="doCancel()">Cancel</div>      
       </div>
       
-    </div>
-
- `
+    </div> `
 }
