@@ -7,7 +7,7 @@
  * 
  * Using the tasksForBacklog JSON to fill backlog content.
  * 
- * @param{ string } - JSON array 
+ * @param{ string } - addBacklogs generates a list of elements from an array.
  */
 
 function addBacklogs() { //img tag variable for changing images. ${tasksForBacklog[x][i]['image']}
@@ -38,6 +38,11 @@ function addBacklogs() { //img tag variable for changing images. ${tasksForBackl
         }
 }
 
+/**
+ * This function is for generating an Element that could be used to change the department and to get addet into the Board.
+ * 
+ * @param {integer} index - Used for the json array as index  
+ */
 function openActionForBacklogElements(index){
     document.getElementById('details-content').classList.remove('d-none');
     document.getElementById('title-details').innerHTML = ` ${tasks[index]['title']}`;
@@ -50,16 +55,16 @@ function openActionForBacklogElements(index){
                 <input onclick="changeDepartment('management', ${index})" type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
                 <label class="btn btn-outline-success" for="btnradio1">Managment</label>
               
-                <input onclick="changeDepartment('finance', ${index}))" type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                <input onclick="changeDepartment('finance', ${index})" type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
                 <label class="btn btn-outline-success" for="btnradio2">Finance</label>
               
-                <input onclick="changeDepartment('it', ${index}))" type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                <input onclick="changeDepartment('it', ${index})" type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
                 <label class="btn btn-outline-success" for="btnradio3">IT</label>
                 
-                <input onclick="changeDepartment('controlling', ${index}))" type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+                <input onclick="changeDepartment('controlling', ${index})" type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
                 <label class="btn btn-outline-success" for="btnradio4">Controlling</label>
 
-                <input onclick="changeDepartment('web', ${index}))" type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+                <input onclick="changeDepartment('web', ${index})" type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
                 <label class="btn btn-outline-success" for="btnradio5">Web</label>
               </div>
     
@@ -77,16 +82,30 @@ function openActionForBacklogElements(index){
     
 }
 
+/**
+ * this funktion shows the detailed content of the choosen element on Backlog.
+ * 
+ */
 function closeDetails(){
     document.getElementById('details-content').classList.add('d-none');
     document.getElementById('assigned-to-details').innerHTML = '';   
 }
 
+/**
+ * These function is used for change the department values.
+ * 
+ * @param {string} department - is used in an JSON array to desribe what element is choosen.
+ * @param { integer } index - Is used to find the choosen element in an JSON array. 
+ */
 function changeDepartment(department, index){
     tasks[index]['department'] = department;
 }
 
-
+/**
+ * this function adds the choosen element to the board.
+ * 
+ * @param {integer} index - Is used to find the choosen element in an JSON array. 
+ */
 function addToBacklog(index){
     tasks[index]['visibleboard'] = true;
     saveDB();
