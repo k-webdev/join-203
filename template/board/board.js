@@ -112,7 +112,7 @@ function generateTask(element) {
  */
 function hideItem(id) {
     tasks[parseInt(id)]['visibleboard'] = false;
-    // saveDB();
+    saveDB();
     updateBoardHTML();
 }
 
@@ -125,7 +125,7 @@ function hideItem(id) {
 function deleteTask(id) {    
     tasks.splice(parseInt(id), 1);    
     freshupIDs();
-    // saveDB();
+    saveDB();
     updateBoardHTML();
 }
 
@@ -148,7 +148,7 @@ function freshupIDs() {
  */
 function changeSection(id, section) {
     tasks[parseInt(id)]['section'] = section;
-    // saveDB();
+    saveDB();
     updateBoardHTML();
 }
 
