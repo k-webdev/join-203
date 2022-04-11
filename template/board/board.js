@@ -69,7 +69,7 @@ function generateTask(element) {
                     </div>
 
                     <div>
-                        <div class="border border-dark justify-content-center align-items-center rounded-pill px-2"> 
+                        <div class="date-pane border border-dark justify-content-center align-items-center rounded-pill px-2"> 
                             ${element['date']}
                         </div>  
                     </div>
