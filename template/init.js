@@ -24,7 +24,10 @@ function saveDB() {
 async function loadDB() {
     await downloadFromServer();
     tasks = JSON.parse(backend.getItem('tasks')) || [];
-    updateBoardHTML();   // every change on 'tasks'-dataset needs a rebuild of board-site 
+    setTimeout(() => {
+        updateBoardHTML();   // every change on 'tasks'-dataset needs a rebuild of board-site     
+    }, 1000);
+
 }
 
 
