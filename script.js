@@ -109,4 +109,6 @@ function changeDepartment(department, index){
 function addToBacklog(index){
     tasks[index]['visibleboard'] = true;
     saveDB();
+    addBacklogs();
+    alert('The element has been changed.');
 }

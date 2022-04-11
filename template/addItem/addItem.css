@@ -8,7 +8,6 @@
     color: blue;
 }
 .add-item-container{
-    padding: 8rem 2rem 2rem 2rem;
     width: 800px;
 
 }
@@ -71,18 +70,15 @@ textarea {
     color: black;
 }
 
-@media(max-width: 650px){
-
-    .add-item-container{
-        padding: 4rem 0 0 0;
-    }
-
-}
 
 @media(max-width: 350px){
 
     .add-item-container-headline{
         text-align: center;
+    }
+
+    .add-item-container{
+        padding: 11rem 0 0 0;
     }
 
     .row{

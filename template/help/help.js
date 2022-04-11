@@ -61,6 +61,8 @@ function openBackLogHelp() {
 
     <p><b>Backlog:</b></p>
     Here you will find an overview of all the tasks.
+    You can switch the department and add the tasks to the board.
+    Click on a task and a menu for controlling will appear. 
 
     </span>
 

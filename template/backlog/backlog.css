@@ -25,6 +25,8 @@ table thead th:last-child {
 }
 
 table thead {
+    z-index: 2;
+    height: 62px;
     border-style: none !important;
     text-align: left;
     position: sticky;
@@ -68,7 +70,7 @@ table tbody td:last-child {
 
 
 .action-for-backlog{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
