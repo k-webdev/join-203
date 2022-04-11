@@ -83,13 +83,17 @@ table tbody td:last-child {
 .action-for-backlog-content{
     width: 50%;
     height: 50%;
-    background-color: white;
+    background-color: #0dcaf0;
     border: solid black 4px;
     border-radius: 16px;
-
+    padding: 16px;
+    box-shadow: 0px 0px 25px 10px rgba(255,255,255,0.5);
 }
 
-
+.class-flex-row{
+    display: flex;
+    flex-direction: row;
+}
 
 
 .backlog-sort-bg {
