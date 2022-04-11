@@ -31,6 +31,7 @@ function allowDrop(ev) {
  */
 function moveTo(section) {
     tasks[currentDraggedElement]['section'] = section; // change 
+    saveDB();
     updateBoardHTML(); // every change on 'tasks'-dataset needs a rebuild of board-site 
     
 }
