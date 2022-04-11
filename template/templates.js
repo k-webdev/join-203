@@ -1,4 +1,9 @@
-
+/**
+ * This function is a workaround copied from w3school to implement template functionality to the web-app 
+ * (link: https://www.w3schools.com/howto/howto_html_include.asp)
+ * 
+ * @returns - returns nothing. I think it is an exit node for a loop used intern in the function
+ */
 
 function includeHTML() {
   var z, i, elmnt, file, xhttp;

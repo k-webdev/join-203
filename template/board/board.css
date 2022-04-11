@@ -1,8 +1,8 @@
 .board-site {
     min-height: 100vh;
-    /* height: 100vh; */
-    background-color: white;
-    /* align-items: flex-start;  */
+    width: calc(100wh - 200px);    
+    background-color: white;   
+    margin-left: 200px;
 }
 
 .task {
@@ -10,15 +10,8 @@
     border-style: solid;
     border-width: 1px;
     border-radius: 5px;
-    border-color: black;
-    /* margin: 3px;
-    padding: 3px;
-    padding-left: 10px; */
-    /* background: #666;     */
-    /* color:rgb(255,255,255);   */
-
+    border-color: black;  
     color:rgba(0,0,0,0.8);
-
 }
 
 .section-bg-color {
@@ -42,10 +35,6 @@
     /* overflow-x:none; */
 
 }
-
-/* .todo-section:hover , .inprogress-section:hover, .testing-section:hover, .done-section:hover{
-    background-color: rgba(0,0,0,0.15) ;
-} */
 
 .urgency-color-high {
     background-color: rgba(255,50,50,1);

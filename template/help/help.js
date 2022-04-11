@@ -1,3 +1,7 @@
+/**
+ * This function generates the help-section for the board-site
+ * 
+ */
 function openBoardHelp() {
     document.getElementById('get-help-content').innerHTML = '';
 
@@ -45,6 +49,9 @@ function openBoardHelp() {
     `;
 }
 
+/**
+ * This function is for changeing help section content to backlog.
+ */
 function openBackLogHelp() {
     document.getElementById('get-help-content').innerHTML = '';
 
@@ -60,6 +67,9 @@ function openBackLogHelp() {
     `;
 }
 
+/**
+ * This function is for changeing help section content to add task.
+ */
 function openAddTask() {
     document.getElementById('get-help-content').innerHTML = '';
 

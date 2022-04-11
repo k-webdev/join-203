@@ -1,13 +1,27 @@
+/**
+ * This function will be used to hide the board-dialog.
+ */
 function doCancel() {
    document.getElementById('board-dialog').classList.add('d-none');
 }
 
+
+/**
+ * This function calls a function <generateDeleteDialog(id);> where the content for the dialog for the security query will be generated whether the task item can be deleted. Then dialog-site is made visible.
+ * 
+ * @param {String} id - This variable contains the ID of deleting task-item. The value of ID should equal to index-position in tasks-variable.
+ */
 function showDeleteDialog(id) {
    generateDeleteDialog(id);
    document.getElementById('board-dialog').classList.remove('d-none');
 
 }
 
+/**
+ * This function creates the content for the security query whether task item can be deleted. This function is called by <showDeleteDialog(id);>
+ * 
+ * @param {String} id - This variable contains the ID of task-item to delete. The value of ID should equal to index-position in tasks-variable.
+ */
 function generateDeleteDialog(id) {
    document.getElementById('board-dialog').innerHTML = `
     <div class="dialog-content d-flex flex-column justify-content-between">
@@ -31,12 +45,24 @@ function generateDeleteDialog(id) {
     </div> `
 }
 
+
+/**
+ * This function calls a function <generateHideItemDialog(id);> where the content for the dialog for the security query will be generated whether the task item can be hidden. Then dialog-site is made visible.
+ * 
+ * @param {String} id - This variable contains the ID of task-item to hide. The value of ID should equal to index-position in tasks-variable.
+ */
 function showHideItemDialog(id) {
    generateHideItemDialog(id);
    document.getElementById('board-dialog').classList.remove('d-none');
 
 }
 
+
+/**
+ * This function creates the content for the security query whether task item can be deleted. This function is called by <showHideItemDialog(id);>
+ * 
+ * @param {String} id - This variable contains the ID of task-item to hide. The value of ID should equal to index-position in tasks-variable.
+ */
 function generateHideItemDialog(id) {
    document.getElementById('board-dialog').innerHTML = `
     <div class="dialog-content d-flex flex-column justify-content-between">
@@ -56,11 +82,23 @@ function generateHideItemDialog(id) {
     </div> `
 }
 
+
+/**
+ * This function calls a function <generateMoveToDialog(id);> where the content for the dialog for the choice where to move the task-item. Then dialog-site is made visible.
+ * 
+ * @param {String} id - This variable contains the ID of task-item to move to. The value of ID should equal to index-position in tasks-variable.
+ */
 function showMoveToDialog(id) {
    generateMoveToDialog(id);
    document.getElementById('board-dialog').classList.remove('d-none');
 }
 
+
+/**
+ * This function creates the content for the move to dialog. This function is called by <showMoveToDialog(id);>
+ * 
+ * @param {String} id - This variable contains the ID of task-item to move to. The value of ID should equal to index-position in tasks-variable.
+ */
 function generateMoveToDialog(id) {
    document.getElementById('board-dialog').innerHTML = `  
     
@@ -80,7 +118,5 @@ function generateMoveToDialog(id) {
          <div class="cancel-button d-flex border border-dark py-2 px-4 m-2 rounded" id="button-cancel" onclick="doCancel()">Cancel</div>      
       </div>
       
-    </div>
-
- `
+    </div> `
 }
