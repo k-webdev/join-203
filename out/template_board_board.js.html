@@ -140,6 +140,7 @@ function generateTask(element) {
  */
 function hideItem(id) {
     tasks[parseInt(id)]['visibleboard'] = false;
+    saveDB();
     updateBoardHTML();
 }
 
@@ -152,6 +153,7 @@ function hideItem(id) {
 function deleteTask(id) {    
     tasks.splice(parseInt(id), 1);    
     freshupIDs();
+    saveDB();
     updateBoardHTML();
 }
 
@@ -174,6 +176,7 @@ function freshupIDs() {
  */
 function changeSection(id, section) {
     tasks[parseInt(id)]['section'] = section;
+    saveDB();
     updateBoardHTML();
 }
 
@@ -206,13 +209,13 @@ function doHighlightAway(id) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addBacklogs">addBacklogs</a></li><li><a href="global.html#allowDrop">allowDrop</a></li><li><a href="global.html#changeSection">changeSection</a></li><li><a href="global.html#currentDraggedElement">currentDraggedElement</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#doCancel">doCancel</a></li><li><a href="global.html#doHighlight">doHighlight</a></li><li><a href="global.html#doHighlightAway">doHighlightAway</a></li><li><a href="global.html#freshupIDs">freshupIDs</a></li><li><a href="global.html#generateDeleteDialog">generateDeleteDialog</a></li><li><a href="global.html#generateHideItemDialog">generateHideItemDialog</a></li><li><a href="global.html#generateMoveToDialog">generateMoveToDialog</a></li><li><a href="global.html#generateSection">generateSection</a></li><li><a href="global.html#generateTask">generateTask</a></li><li><a href="global.html#hideItem">hideItem</a></li><li><a href="global.html#includeHTML">includeHTML</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadDB">loadDB</a></li><li><a href="global.html#loadJSONFromServer">loadJSONFromServer</a></li><li><a href="global.html#moveTo">moveTo</a></li><li><a href="global.html#openBoardHelp">openBoardHelp</a></li><li><a href="global.html#saveDB">saveDB</a></li><li><a href="global.html#saveJSONToServer">saveJSONToServer</a></li><li><a href="global.html#showDeleteDialog">showDeleteDialog</a></li><li><a href="global.html#showHideItemDialog">showHideItemDialog</a></li><li><a href="global.html#showMoveToDialog">showMoveToDialog</a></li><li><a href="global.html#startDragging">startDragging</a></li><li><a href="global.html#updateBoardHTML">updateBoardHTML</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addBacklogs">addBacklogs</a></li><li><a href="global.html#addTaskOnInit">addTaskOnInit</a></li><li><a href="global.html#addToBacklog">addToBacklog</a></li><li><a href="global.html#allowDrop">allowDrop</a></li><li><a href="global.html#assignableEmployees">assignableEmployees</a></li><li><a href="global.html#assignedEmployees">assignedEmployees</a></li><li><a href="global.html#changeDepartment">changeDepartment</a></li><li><a href="global.html#changeSection">changeSection</a></li><li><a href="global.html#closeAddTasks">closeAddTasks</a></li><li><a href="global.html#closeDetails">closeDetails</a></li><li><a href="global.html#createTask">createTask</a></li><li><a href="global.html#currentDraggedElement">currentDraggedElement</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#doCancel">doCancel</a></li><li><a href="global.html#doHighlight">doHighlight</a></li><li><a href="global.html#doHighlightAway">doHighlightAway</a></li><li><a href="global.html#dueDate">dueDate</a></li><li><a href="global.html#freshupIDs">freshupIDs</a></li><li><a href="global.html#generateDeleteDialog">generateDeleteDialog</a></li><li><a href="global.html#generateHideItemDialog">generateHideItemDialog</a></li><li><a href="global.html#generateMoveToDialog">generateMoveToDialog</a></li><li><a href="global.html#generateSection">generateSection</a></li><li><a href="global.html#generateTask">generateTask</a></li><li><a href="global.html#getInputValues">getInputValues</a></li><li><a href="global.html#getToday">getToday</a></li><li><a href="global.html#hideItem">hideItem</a></li><li><a href="global.html#includeHTML">includeHTML</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#loadDB">loadDB</a></li><li><a href="global.html#loadJSONFromServer">loadJSONFromServer</a></li><li><a href="global.html#mousePosition_x">mousePosition_x</a></li><li><a href="global.html#moveTo">moveTo</a></li><li><a href="global.html#openActionForBacklogElements">openActionForBacklogElements</a></li><li><a href="global.html#openAddTask">openAddTask</a></li><li><a href="global.html#openBackLogHelp">openBackLogHelp</a></li><li><a href="global.html#openBoardHelp">openBoardHelp</a></li><li><a href="global.html#pushTaskIntoTasks">pushTaskIntoTasks</a></li><li><a href="global.html#renderAssignedEmployees">renderAssignedEmployees</a></li><li><a href="global.html#resetInputFields">resetInputFields</a></li><li><a href="global.html#saveDB">saveDB</a></li><li><a href="global.html#saveJSONToServer">saveJSONToServer</a></li><li><a href="global.html#showDeleteDialog">showDeleteDialog</a></li><li><a href="global.html#showHideItemDialog">showHideItemDialog</a></li><li><a href="global.html#showMoveToDialog">showMoveToDialog</a></li><li><a href="global.html#startDragging">startDragging</a></li><li><a href="global.html#updateAssignableEmployeeList">updateAssignableEmployeeList</a></li><li><a href="global.html#updateBoardHTML">updateBoardHTML</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sun Apr 10 2022 20:22:53 GMT+0200 (Mitteleuropäische Sommerzeit)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon Apr 11 2022 18:31:38 GMT+0200 (Mitteleuropäische Sommerzeit)
 </footer>
 
 <script> prettyPrint(); </script>
